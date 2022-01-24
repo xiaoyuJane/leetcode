@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.string;
 
 //实现 strStr() 函数。 
 //
@@ -45,19 +45,33 @@ package leetcode.editor.cn;
 // haystack 和 needle 仅由小写英文字符组成 
 // 
 // Related Topics 双指针 字符串 字符串匹配 
-// 👍 1221 👎 0
+// 👍 1219 👎 0
 
-//kmp 算法--前缀函数
-
+//方法1：暴力破解法
 public class ImplementStrstr{
     public static void main(String[] args) {
         Solution solution = new ImplementStrstr().new Solution();
+        String haystack = "aaaaa";
+        String needle = "bba";
+        int res = solution.strStr(haystack,needle);
+        System.out.println(res);
     }
-    
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int strStr(String haystack, String needle) {
+        int n = haystack.length(),  m=needle.length();
 
+        for (int i=0;i+m<=n;i++){  //比较到n的前m个字符即可
+            boolean flag =true;
+            for (int j=0;j<m;j++){
+                if (haystack.charAt(i+j) != needle.charAt(j)){
+                    flag=false;
+                    break;
+                }
+            }
+            if (flag) return i;
+        }
+        return -1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
