@@ -47,7 +47,12 @@ package leetcode.editor.cn;
 // Related Topics 双指针 字符串 字符串匹配 
 // 👍 1221 👎 0
 
-//kmp 算法--前缀函数
+//kmp 算法--前缀函数 （参考阮一峰的讲解，很通俗易懂）
+// 原串只往右移，不进行回溯，可以想象成原串不动，匹配串跟随原串动，主动去匹配它
+// 匹配串中利用前缀和后缀进行加快匹配，当不匹配的时候，字串并非只向右移动1位继续匹配，而是将字串的前缀移动到原串的后缀相同位置，即移动{相同字符-前缀后缀最大交集长度}位
+//
+//
+
 
 public class ImplementStrstr{
     public static void main(String[] args) {
@@ -58,6 +63,20 @@ public class ImplementStrstr{
 class Solution {
     public int strStr(String haystack, String needle) {
 
+        int n=haystack.length(), m=needle.length();
+        if (m ==0) return 0;
+
+        //1.构造前缀后缀最大交集长度数组的过程
+        int[]next = new int[m];
+        for (int right=1,left=0;right<m;right++){
+            while (left>0 && needle.charAt(left)!=needle.charAt(right)){
+                left=next[left-1];
+            }
+            if (needle.charAt(left)==needle.charAt(right)) left++;
+            next[right]=left;
+        }
+
+        return 0;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

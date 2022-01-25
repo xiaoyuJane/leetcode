@@ -19,11 +19,16 @@ public class LcApplication {
 //        System.out.println(12%10);
 //        System.out.println(19%10);
 
-        HashMap<Character,Integer> map = new HashMap<>();
-        map.put('a',1);
-        map.put('a',2);
-        System.out.println(map.get('a'));
-        System.out.println(map.getOrDefault('b',0));
+//        HashMap<Character,Integer> map = new HashMap<>();
+//        map.put('a',1);
+//        map.put('a',2);
+//        System.out.println(map.get('a'));
+//        System.out.println(map.getOrDefault('b',0));
+
+        int[] next = new int[2];
+        for (int i=0;i<next.length;i++){
+            System.out.println(next[i]);
+        }
 
 
     }
