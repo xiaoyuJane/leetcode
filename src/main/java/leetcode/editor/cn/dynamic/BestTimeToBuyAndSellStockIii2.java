@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.dynamic;
 
 //给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格。 
 //
@@ -53,9 +53,9 @@ package leetcode.editor.cn;
 
 //使用递归的方法(状态方程)
 
-public class BestTimeToBuyAndSellStockIii{
+public class BestTimeToBuyAndSellStockIii2{
     public static void main(String[] args) {
-        Solution solution = new BestTimeToBuyAndSellStockIii().new Solution();
+        Solution solution = new BestTimeToBuyAndSellStockIii2().new Solution();
     }
     
 //leetcode submit region begin(Prohibit modification and deletion)

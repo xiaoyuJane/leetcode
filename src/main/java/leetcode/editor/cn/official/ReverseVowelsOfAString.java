@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.official;
 
 //给你一个字符串 s ，仅反转字符串中的所有元音字母，并返回结果字符串。 
 //

@@ -67,13 +67,16 @@ class Solution {
         if (m ==0) return 0;
 
         //1.构造前缀后缀最大交集长度数组的过程
-        int[]next = new int[m];
-        for (int right=1,left=0;right<m;right++){
-            while (left>0 && needle.charAt(left)!=needle.charAt(right)){
-                left=next[left-1];
+        /*len 表示prefix数组的值
+        * i表示prefix数组的下标
+        * */
+        int[]prefix = new int[m]; //初始都为0
+        for (int i=1,len=0;i<m;i++){
+            while (len>0 && needle.charAt(i)!=needle.charAt(i)){
+                len=prefix[len-1];
             }
-            if (needle.charAt(left)==needle.charAt(right)) left++;
-            next[right]=left;
+            if (needle.charAt(len)==needle.charAt(i)) len++; //
+            prefix[i]=len;
         }
 
         return 0;
