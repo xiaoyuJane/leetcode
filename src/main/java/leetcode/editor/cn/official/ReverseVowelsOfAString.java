@@ -46,10 +46,10 @@ class Solution {
         int j=s.length()-1;
         char[] arr = s.toCharArray();
         while (i<j){
-            while (i<s.length() && !isVowel(arr[i])){
+            while (i<s.length() && isVowel(arr[i])){
                 i++;
         }
-            while (j>0 && !isVowel(arr[j])){
+            while (j>0 && isVowel(arr[j])){
                 j--;
             }
             if (i<j){
@@ -62,7 +62,7 @@ class Solution {
     }
 
     public boolean isVowel(char ch){
-        return "aeiouAEIOU".indexOf(ch) >=0;
+        return "aeiouAEIOU".indexOf(ch) < 0;
     }
 
     public void swap(char[] arr,int i,int j){
