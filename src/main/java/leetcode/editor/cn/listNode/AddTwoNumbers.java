@@ -52,7 +52,7 @@ package leetcode.editor.cn.listNode;
  * }
  */
 
-class ListNode {
+ class ListNode {
       int val;
       ListNode next;
       ListNode() {}

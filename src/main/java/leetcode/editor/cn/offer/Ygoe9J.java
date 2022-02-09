@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.offer;
 
 //给定一个无重复元素的正整数数组 candidates 和一个正整数 target ，找出 candidates 中所有可以使数字和为目标数 target 的
 //唯一组合。 
@@ -60,7 +60,9 @@ package leetcode.editor.cn;
 // Related Topics 数组 回溯 
 // 👍 12 👎 0
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 public class Ygoe9J{
@@ -73,8 +75,24 @@ class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
 
+        Deque<Integer> path = new ArrayDeque<>();
+        dfs(candidates,0,target,path,res);
         return res;
+    }
 
+    private void dfs(int[] candidates, int i, int target, Deque<Integer> path, List<List<Integer>> res) {
+        if (target <0) return;
+        if (target == 0){
+            res.add(new ArrayList<>(path));
+            return;
+        }
+
+        //由于涉及到去重，所以在搜索的时候，如果i位置上的元素已经搜索过了，后面就从i开始，不考虑i之前的选项，故j=i
+        for (int j=i;j<candidates.length;j++){
+            path.addLast(candidates[j]);
+            dfs(candidates,j,target-candidates[j],path,res);
+            path.removeLast();
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
