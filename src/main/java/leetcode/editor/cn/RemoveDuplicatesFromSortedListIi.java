@@ -67,14 +67,16 @@ class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null) return null;
         //由于链表的头结点可能被删除，因此需要额外使用一个节点指向链表的头结点
-        //链表都是引用
+        //链表都是引用,所以后续的改变都能改变整个链表
         ListNode dummy = new ListNode(101,head);
+
         ListNode cur = dummy;
+
         while (cur.next!=null && cur.next.next!=null){
             if(cur.next.val == cur.next.next.val){
                 int x = cur.next.val;
                 while (cur.next !=null && cur.next.val == x){
-                    cur.next = cur.next.next;
+                    cur.next = cur.next.next;  //单链表的删除操作
                 }
             }else {
                 cur = cur.next;
