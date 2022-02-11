@@ -69,7 +69,7 @@ class Solution {
     public ListNode reverseList(ListNode head) {
         ListNode res = null;
         for (ListNode x=head; x!=null; x=x.next){
-            res = new ListNode(x.val,res);
+            res = new ListNode(x.val,res); //有点类似头插法，赋值，将旧值设置为新值的下一位
         }
         return  res;
 
