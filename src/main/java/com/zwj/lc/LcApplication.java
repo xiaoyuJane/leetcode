@@ -17,7 +17,7 @@ public class LcApplication {
 //        System.out.println(12/10);
 //        System.out.println(19/10);
 //        System.out.println(12%10);
-//        System.out.println(19%10);
+        System.out.println(19%10);
 
 //        HashMap<Character,Integer> map = new HashMap<>();
 //        map.put('a',1);

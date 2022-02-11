@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.listNode;
 
 //给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回 已排序的链表 。 
 //
@@ -30,8 +30,6 @@ package leetcode.editor.cn;
 // Related Topics 链表 双指针 
 // 👍 800 👎 0
 
-import java.util.List;
-
 public class RemoveDuplicatesFromSortedListIi{
     public static void main(String[] args) {
         Solution solution = new RemoveDuplicatesFromSortedListIi().new Solution();
@@ -44,7 +42,7 @@ public class RemoveDuplicatesFromSortedListIi{
         curNode.next = new ListNode(3);
         ListNode res = solution.deleteDuplicates(head);
     }
-    static class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
         ListNode(){};
@@ -79,7 +77,7 @@ class Solution {
                     cur.next = cur.next.next;  //单链表的删除操作
                 }
             }else {
-                cur = cur.next;
+                cur = cur.next; //游标的移动操作
             }
         }
         return dummy.next;
