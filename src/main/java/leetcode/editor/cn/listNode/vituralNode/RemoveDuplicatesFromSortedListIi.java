@@ -1,4 +1,4 @@
-package leetcode.editor.cn.listNode;
+package leetcode.editor.cn.listNode.vituralNode;
 
 //给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回 已排序的链表 。 
 //
@@ -64,19 +64,23 @@ public class RemoveDuplicatesFromSortedListIi{
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null) return null;
-        //由于链表的头结点可能被删除，因此需要额外使用一个节点指向链表的头结点
-        //链表都是引用,所以后续的改变都能改变整个链表
+        //由于链表的头结点可能被删除，因此需要额外使用一个节点指向链表的头结点。链表都是引用,所以后续的改变都能改变整个链表
+        //虚拟头节点的存在：1.当head有可能被删除，需要虚拟头结点 2.删除节点需要被删除节点的前一个节点
         ListNode dummy = new ListNode(101,head);
 
         ListNode cur = dummy;
 
         while (cur.next!=null && cur.next.next!=null){
+            //1.判断后两位是否有相等的值
             if(cur.next.val == cur.next.next.val){
+                //2.如果有，做删除操作
                 int x = cur.next.val;
                 while (cur.next !=null && cur.next.val == x){
                     cur.next = cur.next.next;  //单链表的删除操作
                 }
-            }else {
+            }
+            //2.不存在相等，游标后移动
+            else {
                 cur = cur.next; //游标的移动操作
             }
         }

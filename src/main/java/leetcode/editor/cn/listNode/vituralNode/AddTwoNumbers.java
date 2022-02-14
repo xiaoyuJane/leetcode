@@ -1,4 +1,4 @@
-package leetcode.editor.cn.listNode;
+package leetcode.editor.cn.listNode.vituralNode;
 
 //给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。 
 //
@@ -52,20 +52,21 @@ package leetcode.editor.cn.listNode;
  * }
  */
 
- class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-  }
+
 
 public class AddTwoNumbers{
     public static void main(String[] args) {
         Solution solution = new AddTwoNumbers().new Solution();
 
+
     }
-    
+    static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
 //leetcode submit region begin(Prohibit modification and deletion)
 /**
  * Definition for singly-linked list.
@@ -81,9 +82,11 @@ public class AddTwoNumbers{
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
+        //虚拟头节点
         ListNode pre = new ListNode(0);
+        //游标指向虚拟头节点的下一个节点
         ListNode cur = pre;
-
+        //进位
         int carry=0;
 
         while (l1!=null ||l2!=null){
@@ -91,12 +94,13 @@ class Solution {
             int x = l1==null ? 0: l1.val;
             int y = l2==null ? 0: l2.val;
             int sum = x + y + carry;
-            carry = sum/10;
-            sum = sum%10;
 
+            carry = sum/10; //整除
+            sum = sum%10;  //取余
             cur.next = new ListNode(sum);
-            cur = cur.next;
 
+            //移动游标
+            cur = cur.next;
             if (l1!=null) l1=l1.next;
             if (l2!=null) l2=l2.next;
         }
