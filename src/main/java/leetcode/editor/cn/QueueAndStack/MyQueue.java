@@ -1,4 +1,4 @@
-package leetcode.editor.cn.tool;
+package leetcode.editor.cn.QueueAndStack;
 
 import java.util.ArrayList;
 import java.util.List;

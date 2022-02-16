@@ -1,4 +1,4 @@
-package leetcode.editor.cn.tool;
+package leetcode.editor.cn.QueueAndStack;
 
 
 public class MyCircularQueue {
