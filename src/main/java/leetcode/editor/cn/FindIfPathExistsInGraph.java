@@ -50,38 +50,44 @@ import java.util.*;
 public class FindIfPathExistsInGraph{
     public static void main(String[] args) {
         Solution solution = new FindIfPathExistsInGraph().new Solution();
+        int[][] edges = {
+                {0,1},
+                {1,2},
+                {2,0}
+        };
+        System.out.println(solution.validPath(3,edges,0,2));
 
     }
     
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean validPath(int n, int[][] edges, int source, int destination) {
+        //包含所有节点的邻接节点
         Map<Integer, List<Integer>> map = new HashMap<>();
-
         for (int[] edge : edges) {
-            List<Integer> list = map.getOrDefault(edge[0], new ArrayList<Integer>());
-            List<Integer> list2 = map.getOrDefault(edge[1], new ArrayList<Integer>());
-            list.add(edge[1]);
-            list2.add(edge[0]);
+            List<Integer> start = map.getOrDefault(edge[0], new ArrayList<Integer>());
+            List<Integer> end = map.getOrDefault(edge[1], new ArrayList<Integer>());
+            start.add(edge[1]);
+            end.add(edge[0]);
 
-            map.put(edge[0], list);
-            map.put(edge[1], list2);
+            map.put(edge[0], start); //节点的邻接节点
+            map.put(edge[1], end);
         }
 
         Queue<Integer> queue = new LinkedList<Integer>();
-        queue.offer(source);
+        queue.offer(source); //入队
         Map<Integer, Integer> status = new HashMap<>();
         while (!queue.isEmpty()) {
-            Integer tmp = queue.poll();
+            Integer tmp = queue.poll(); //出队
             if (tmp == destination) return true;
             System.out.println(tmp);
 
             if (!status.containsKey(tmp) && map.containsKey(tmp)) {
-                List<Integer> list = map.get(tmp);
+                List<Integer> list = map.get(tmp); //tmp的邻接节点
                 for (int i = 0; i < list.size(); i++) {
                     Integer m = list.get(i);
                     if (m == destination) return true;
-                    if (!status.containsKey(m)) queue.offer(m);
+                    if (!status.containsKey(m)) queue.offer(m); //入队
                 }
                 status.put(tmp, 0);
             }
