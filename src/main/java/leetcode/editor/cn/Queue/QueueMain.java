@@ -1,4 +1,6 @@
-package leetcode.editor.cn.QueueAndStack;
+package leetcode.editor.cn.Queue;
+
+import TestAndTool.tool.MyQueue;
 
 public class QueueMain {
     public static void main(String[] args) {

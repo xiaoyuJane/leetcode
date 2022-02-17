@@ -1,7 +1,7 @@
 package leetcode.editor.cn.BFS;
 
 
-import TestAndTool.traverse.TreeNode;
+import TestAndTool.tool.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
