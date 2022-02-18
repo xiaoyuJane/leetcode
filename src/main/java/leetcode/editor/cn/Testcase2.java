@@ -35,8 +35,18 @@ public class Testcase2 {
 //        int mm = -1%1;
 //        System.out.println(mm);
 
-        System.out.println("=============");
-        double ave = 11/2;
-        System.out.println(ave);
+//        System.out.println("=============");
+//        double ave = 11/2;
+//        System.out.println(ave);
+
+        //String 转Integer
+//        String s1 = "1";
+//        String s2 = "2";
+//        String op = "+";
+//        System.out.println(Integer.parseInt(s1) + Integer.parseInt(s2));
+
+
+//
+
     }
 }
