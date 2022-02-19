@@ -1,36 +1,63 @@
 package TestAndTool.tool;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Stack;
+//lc232
+//请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
+//
+//        实现 MyQueue 类：
+//
+//        void push(int x) 将元素 x 推到队列的末尾
+//        int pop() 从队列的开头移除并返回元素
+//        int peek() 返回队列开头的元素
+//        boolean empty() 如果队列为空，返回 true ；否则，返回 false
+//        说明：
+//
+//        你 只能 使用标准的栈操作 —— 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的。
+//        你所使用的语言也许不支持栈。你可以使用 list 或者 deque（双端队列）来模拟一个栈，只要是标准的栈操作即可。
 
 public class MyQueue {
-    private List<Integer> data;
-    private int p_start;
+    Deque<Integer> inStack ;
+    Deque<Integer> outStack;
 
-    public MyQueue(){
-        this.data = new ArrayList<Integer>();
-        this.p_start = 0;
+    public MyQueue() {
+        inStack = new LinkedList<Integer>();
+        outStack = new LinkedList<Integer>();
+
     }
 
-    public boolean enQueue(int x){
-        data.add(x);
-        return true;
+    public void push(int x) {
+        inStack.push(x);
     }
 
-    public boolean isEmpty(){
-        //因为出队的元素实际上并没有被删除，只是front指针往后移了，data.size并不是真实的队列中的元素个数
-        return p_start >= data.size();
+    public int pop() {
+        if (outStack.isEmpty()) {
+            in2out();
+        }
+        return outStack.pop();
+
+
     }
 
-    public boolean deQueue(){
-        if (isEmpty()) return false;
-        p_start++;
-        return true;
+    public int peek() {
+        if (outStack.isEmpty()) {
+            in2out();
+        }
+        return outStack.peek();
+
+
     }
 
+    public boolean empty() {
+        return inStack.isEmpty() && outStack.isEmpty();
 
-    public int Front(){
-        return data.get(p_start);
+    }
+
+    private void in2out() {
+        while (!inStack.isEmpty()) {
+            outStack.push(inStack.pop());
+        }
     }
 
 }

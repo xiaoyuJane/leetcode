@@ -1,6 +1,6 @@
 package leetcode.editor.cn.Stack;
 
-import TestAndTool.tool.MyStack;
+import TestAndTool.tool.MyStack1;
 
 /**
  * 使用自定义的栈库（使用动态数组实现的 ArrayList），学习栈的使用
@@ -11,7 +11,7 @@ import TestAndTool.tool.MyStack;
  */
 public class MystackMain {
     public static void main(String[] args) {
-        MyStack stack = new MyStack();
+        MyStack1 stack = new MyStack1();
         stack.push(1);
         stack.push(2);
         stack.push(3);
