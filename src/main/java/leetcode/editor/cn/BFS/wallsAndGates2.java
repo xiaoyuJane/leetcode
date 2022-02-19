@@ -43,6 +43,7 @@ public class wallsAndGates2 {
                 for (int[] direction :directions){
                     int row = row_index +direction[0];
                     int col = col_index +direction[1];
+                    //bfs也有边界条件的，即入队的时机
                     if (row <0 || col<0 || row >= rows || col>= columns || rooms[row][col] != EMPTY) continue;
 
                     rooms[row][col] = rooms[row_index][col_index] +1;
