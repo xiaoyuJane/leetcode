@@ -1,27 +1,28 @@
-package leetcode.editor.cn.recursion;
+package leetcode.editor.cn.listNode.recursion;
 
-//给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
+//将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+//
 // 
 //
 // 示例 1： 
 //
 // 
-//输入：head = [1,2,6,3,4,5,6], val = 6
-//输出：[1,2,3,4,5]
+//输入：l1 = [1,2,4], l2 = [1,3,4]
+//输出：[1,1,2,3,4,4]
 // 
 //
 // 示例 2： 
 //
 // 
-//输入：head = [], val = 1
+//输入：l1 = [], l2 = []
 //输出：[]
 // 
 //
 // 示例 3： 
 //
 // 
-//输入：head = [7,7,7,7], val = 7
-//输出：[]
+//输入：l1 = [], l2 = [0]
+//输出：[0]
 // 
 //
 // 
@@ -29,18 +30,16 @@ package leetcode.editor.cn.recursion;
 // 提示： 
 //
 // 
-// 列表中的节点数目在范围 [0, 104] 内 
-// 1 <= Node.val <= 50 
-// 0 <= val <= 50 
+// 两个链表的节点数目范围是 [0, 50] 
+// -100 <= Node.val <= 100 
+// l1 和 l2 均按 非递减顺序 排列 
 // 
 // Related Topics 递归 链表 
-// 👍 801 👎 0
+// 👍 2188 👎 0
 
-import java.util.List;
-
-public class RemoveLinkedListElements{
+public class MergeTwoSortedLists{
     public static void main(String[] args) {
-        Solution solution = new RemoveLinkedListElements().new Solution();
+        Solution solution = new MergeTwoSortedLists().new Solution();
     }
     //增加了数组转化为链表的实现
     public static class ListNode {
@@ -83,17 +82,24 @@ public class RemoveLinkedListElements{
  * }
  */
 class Solution {
-    public ListNode removeElements(ListNode head, int val) {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 
-        //递归终止条件
-        if (head == null) return head;
-        //向下递
-        head.next = removeElements(head.next,val); //从后往前，是为了找出当前节点的下个节点是啥，所以用head.next= xx
-        //向上归
-        if (head.val == val) head = head.next; //删除当前节点
+        //终止条件
+        if (list1 == null) return list2;
+        else if (list2 == null) return list1;
 
+        else if (list1.val < list2.val) {
+            //向下递的过程
+            list1.next = mergeTwoLists(list1.next,list2);
+            //向上归
+            return list1;
+        }else {
+            //向下递的过程
+            list2.next = mergeTwoLists(list1,list2.next);
+            //向上归
+            return list2;
+        }
 
-        return head;
 
     }
 }

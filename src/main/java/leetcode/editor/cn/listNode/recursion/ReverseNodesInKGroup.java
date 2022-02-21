@@ -1,4 +1,4 @@
-package leetcode.editor.cn.recursion;
+package leetcode.editor.cn.listNode.recursion;
 
 //给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。 
 //

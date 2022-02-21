@@ -47,11 +47,12 @@ public class Testcase2 {
 
 
 //
-        int[] visited = new int[3];
-        for (int i : visited
-             ) {
-            System.out.println(i);
-        }
+        //int数组的默认值
+//        int[] visited = new int[3];
+//        for (int i : visited
+//             ) {
+//            System.out.println(i);
+//        }
 
     }
 }

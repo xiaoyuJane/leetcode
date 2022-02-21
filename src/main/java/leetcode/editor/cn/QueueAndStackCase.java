@@ -1,6 +1,6 @@
 package leetcode.editor.cn;
 
-import leetcode.editor.cn.Queue.MovingAverage;
+import leetcode.editor.cn.BFS.Queue.MovingAverage;
 
 public class QueueAndStackCase {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package leetcode.editor.cn.Queue;
+package leetcode.editor.cn.BFS.Queue;
 
 import TestAndTool.tool.MyCircularQueue;
 
