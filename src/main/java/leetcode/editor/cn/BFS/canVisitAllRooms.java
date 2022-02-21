@@ -38,13 +38,20 @@ package leetcode.editor.cn.BFS;
 //        广度优先搜索
 //        图
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class canVisitAllRooms {
     public static void main(String[] args) {
         Solution solution = new canVisitAllRooms().new Solution();
+        List<List<Integer>> rooms = new ArrayList<List<Integer>>(){{
+            add(Arrays.asList(1,3));
+            add(Arrays.asList(3,0,1));
+            add(Arrays.asList(2));
+            add(Arrays.asList(0));
+        }
+        };
+
+        System.out.println(solution.canVisitAllRooms(rooms));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -52,16 +59,27 @@ public class canVisitAllRooms {
 
         public boolean canVisitAllRooms(List<List<Integer>> rooms) {
             int n = rooms.size();
-            int[] visited = new int[n];
+            int[] visited = new int[n];  //初始为0，表示都未访问过
 
             Queue<List<Integer>> queue= new LinkedList<List<Integer>>();
+            queue.offer(rooms.get(0));
+            visited[0] = 1; //1表示访问了
 
+            while (!queue.isEmpty()){
+                List<Integer> current = queue.poll();
+                for (Integer key : current) {
+                    if (visited[key] == 0 ) {
+                        visited[key] = 1;
+                        queue.offer(rooms.get(key));
+                    }
+                }
+            }
 
+            for (int i=0;i<visited.length;i++){
+                if (visited[i] == 0) return false;
+            }
 
-
-
-
-            return false;
+            return true;
         }
     }
 //leetcode submit region begin(Prohibit modification and deletion)
