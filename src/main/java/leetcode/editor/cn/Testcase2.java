@@ -47,6 +47,11 @@ public class Testcase2 {
 
 
 //
+        int[] visited = new int[3];
+        for (int i : visited
+             ) {
+            System.out.println(i);
+        }
 
     }
 }
