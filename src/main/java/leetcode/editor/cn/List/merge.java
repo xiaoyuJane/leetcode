@@ -46,6 +46,9 @@ public class merge {
         public int[][] merge(int[][] intervals) {
             Arrays.sort(intervals,(v1,v2)->v1[0]-v2[0]); //将区间集合以起始位置递增排序
 
+
+
+
             int[][] res = new int[intervals.length][2]; //要理解是用两位长度的数组表示集合
             int res_index = -1;
 
@@ -61,6 +64,29 @@ public class merge {
             return Arrays.copyOf(res,res_index+1);
 
 
+
+        }
+
+
+        //官方题解
+        public int[][] merge2(int[][] intervals){
+
+            Arrays.sort(intervals, new Comparator<int[]>() {  //需要Comparator对象
+                public int compare(int[] interval1, int[] interval2) {  //重写compare方法
+                    return interval1[0] - interval2[0]; //按照首位的升序（升序为a1-a2;降序为a2-a1）
+                }
+            });
+
+            List<int[]> merged = new ArrayList<int[]>(); //存放结果集，使用ArrayList，可以动态增加
+            for (int i = 0; i < intervals.length; ++i) {
+                int L = intervals[i][0], R = intervals[i][1];
+                if (merged.size() == 0 || merged.get(merged.size() - 1)[1] < L) { //merged中存放的是第一个集合，L表示的是第二个集合的左边
+                    merged.add(new int[]{L, R});
+                } else {
+                    merged.get(merged.size() - 1)[1] = Math.max(merged.get(merged.size() - 1)[1], R);
+                }
+            }
+            return merged.toArray(new int[merged.size()][]); //List可以转变为数组
 
         }
     }
