@@ -1,4 +1,4 @@
-package leetcode.editor.cn.List.array;
+package leetcode.editor.cn.floyd_2pointer;
 
 //给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。 
 //
@@ -66,7 +66,7 @@ public class RemoveElement{
 
         int[] nums = {0,1,2,2,3,0,4,2};
         int val = 2;
-        int res = solution.removeElement(nums,val);
+        int res = solution.removeElement2(nums,val);
         System.out.println(res);
     }
     
@@ -83,6 +83,18 @@ class Solution {
             }
         }
         return index;
+
+    }
+
+
+    //使用快慢指针实现
+    public int removeElement2(int[] nums, int val){
+      int slow=0;
+      for (int fast=0;fast<nums.length;fast++){
+          if (nums[fast] == val) continue;
+          nums[slow++] = nums[fast];
+      }
+      return slow;
 
     }
 }
