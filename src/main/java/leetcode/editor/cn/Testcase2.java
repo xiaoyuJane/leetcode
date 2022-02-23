@@ -35,9 +35,12 @@ public class Testcase2 {
 //        int mm = -1%1;
 //        System.out.println(mm);
 
+        //除法取最小值
 //        System.out.println("=============");
 //        double ave = 11/2;
-//        System.out.println(ave);
+//        int ave_i = 11/2;
+//        System.out.println(ave_i);  //5
+//        System.out.println(ave);  //5.0
 
         //String 转Integer
 //        String s1 = "1";
@@ -53,6 +56,26 @@ public class Testcase2 {
 //             ) {
 //            System.out.println(i);
 //        }
+
+        //if中的或，如果前面为true，就不会再计算后面的true或者false了
+       //或的情况下，如果第一个值为true，则不会去计算第二个值
+//        int i=-1;
+//        int[] a = {1,2};
+//        if (i ==-1||a[i] ==1) System.out.println("yes");
+
+
+        //split 分隔空格的情况
+        String s = "a good     example     ";
+//        String[] arr = s.split(" ");
+        String[] arr = s.split("\\s+");
+        System.out.println(arr.length);
+        for (String a: arr
+             ) {
+            System.out.println("1:"+a);
+
+        }
+
+
 
     }
 }

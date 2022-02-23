@@ -1,4 +1,4 @@
-package leetcode.editor.cn.dynamic;
+package leetcode.editor.cn.DP;
 
 //给定一个数组 prices ，其中 prices[i] 是一支给定股票第 i 天的价格。 
 //

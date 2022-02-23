@@ -5,6 +5,7 @@ package leetcode.editor.cn.string;
  * jav中字符串是不可变的
  * 如果你确实希望你的字符串是可变的，则可以使用 toCharArray 将其转换为字符数组。
  * 如果你经常必须连接字符串，最好使用一些其他的数据结构，如 StringBuilder 。
+ * 字符串直接赋值和new对象存在区别，后者会比前者多创建一个对象，一般建议使用字符串直接赋值
  */
 public class StringMain {
     public static void main(String[] args) {

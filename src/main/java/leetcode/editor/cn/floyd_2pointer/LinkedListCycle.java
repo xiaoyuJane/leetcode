@@ -1,4 +1,4 @@
-package leetcode.editor.cn.floyd;
+package leetcode.editor.cn.floyd_2pointer;
 
 //给你一个链表的头节点 head ，判断链表中是否有环。 
 //

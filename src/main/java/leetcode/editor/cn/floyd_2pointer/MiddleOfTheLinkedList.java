@@ -1,4 +1,4 @@
-package leetcode.editor.cn.floyd;
+package leetcode.editor.cn.floyd_2pointer;
 
 //给定一个头结点为 head 的非空单链表，返回链表的中间结点。 
 //

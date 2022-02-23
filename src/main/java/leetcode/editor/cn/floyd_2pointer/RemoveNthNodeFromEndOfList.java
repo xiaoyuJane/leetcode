@@ -1,4 +1,4 @@
-package leetcode.editor.cn.floyd;
+package leetcode.editor.cn.floyd_2pointer;
 
 //给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。 
 //
