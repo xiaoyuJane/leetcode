@@ -40,6 +40,12 @@ public class StringMain {
         System.out.println("s1 and \"Hello World\": " + (s1.compareTo("Hello World") == 0));
         System.out.println("s1 and s2: " + (s1.compareTo(s2) == 0));
         System.out.println("s1 and s3: " + (s1.compareTo(s3) == 0));
+
+        //字符串反转，需要借助于StringBuffer的反转功能
+        String string="runoob";
+        String reverse = new StringBuffer(string).reverse().toString();
+        System.out.println("字符串反转前:"+string);
+        System.out.println("字符串反转后:"+reverse);
     }
 
 
