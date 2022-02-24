@@ -76,13 +76,14 @@ public class Testcase2 {
 //        }
 
         //java 解决字符串转码问题，查询sql时有效
-        String str = "\\";
-        if (str !=null && !"".equals(str) ){
-            str = str.replaceAll("\\\\","\\\\\\\\")
-                    .replace("_","\\_").replace("\'","\\'")
-                    .replace("%","\\%").replace("*","\\*");
-        }
-        System.out.println(str);
+        //https://blog.csdn.net/weixin_43828846/article/details/117602462?spm=1001.2101.3001.6650.8&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8.pc_relevant_default&utm_relevant_index=12
+//        String str = "\\";
+//        if (str !=null && !"".equals(str) ){
+//            str = str.replaceAll("\\\\","\\\\\\\\")
+//                    .replace("_","\\_").replace("\'","\\'")
+//                    .replace("%","\\%").replace("*","\\*");
+//        }
+//        System.out.println(str);
 
 
 
