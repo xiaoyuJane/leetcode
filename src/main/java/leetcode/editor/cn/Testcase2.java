@@ -65,15 +65,25 @@ public class Testcase2 {
 
 
         //split 分隔空格的情况
-        String s = "a good example";
-        String[] arr = s.split(" ");
-//        String[] arr = s.split("\\s+");
-        System.out.println(arr.length);
-        for (String a: arr
-             ) {
-            System.out.println("1:"+a);
+//        String s = "a good example";
+//        String[] arr = s.split(" ");
+////        String[] arr = s.split("\\s+");
+//        System.out.println(arr.length);
+//        for (String a: arr
+//             ) {
+//            System.out.println("1:"+a);
+//
+//        }
 
+        //java 解决字符串转码问题，查询sql时有效
+        String str = "\\";
+        if (str !=null && !"".equals(str) ){
+            str = str.replaceAll("\\\\","\\\\\\\\")
+                    .replace("_","\\_").replace("\'","\\'")
+                    .replace("%","\\%").replace("*","\\*");
         }
+        System.out.println(str);
+
 
 
 
