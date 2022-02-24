@@ -65,9 +65,9 @@ public class Testcase2 {
 
 
         //split 分隔空格的情况
-        String s = "a good     example     ";
-//        String[] arr = s.split(" ");
-        String[] arr = s.split("\\s+");
+        String s = "a good example";
+        String[] arr = s.split(" ");
+//        String[] arr = s.split("\\s+");
         System.out.println(arr.length);
         for (String a: arr
              ) {
