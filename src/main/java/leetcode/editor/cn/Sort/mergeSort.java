@@ -63,12 +63,13 @@ public class mergeSort {
             int mid = (start + end)/2;
             int start2 = mid+1;
             int i1=start, i2=start2;
+
             while (i1<=mid && i2 <=end){
                 if (arr[i1] <= arr[i2]) i1++;
                 else {
                     int tmp = arr[i2];
                     int i = i2;
-                    while (i>i1){
+                    while (i>i1){ //需要将i到i1之间的位置都往后移，并将i2位置的值插到那个位置上
                         arr[i] = arr[i-1];
                         i--;
                     }
