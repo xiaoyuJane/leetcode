@@ -17,26 +17,23 @@ public class shellSort {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        public  void shellSort(int[] arr) {
-            int n = arr.length;
-
-           // 遍历增量，直到为1，希尔增量是不断/2,增量=间隔数=组数
-            for (int nums = n / 2; nums > 0; nums /= 2) {
-                // 对每个组进行遍历
-                for (int i = 0; i < nums; i++) {
-                    // 插入排序
-                    for (int j = i + nums; j < n; j += nums) {
-                        int cur = arr[j];
-                        int pre = j - nums;
-
-                        while (pre >= i && cur < arr[pre]) {
-                            // 向后挪位置
-                            arr[pre + nums] = arr[pre];
-                            pre -= nums;
+        public  void shellSort(int[] nums) {
+            int n = nums.length;
+            //希尔增量序列
+            for(int i=n/2;i>0;i/=2){
+                //小组数
+                for(int j=0;j<i;j++){
+                    //在小组内做插入排序
+                    for(int k=j+i;k<n;k+=i){
+                        int curr = nums[k];
+                        int preIndex = k-i;
+                        //最下值向前找位置，当不再小于即坐下
+                        while(preIndex>=j && nums[preIndex] > curr){
+                            nums[preIndex+i] = nums[preIndex];
+                            preIndex = preIndex -i;
                         }
+                        nums[preIndex+i] = curr;
 
-                        // currentNumber 找到了自己的位置，坐下
-                        arr[pre + nums] = cur;
                     }
                 }
             }
@@ -46,13 +43,14 @@ public class shellSort {
         public  void shellSort2(int[] arr) {
             // 间隔序列，在希尔排序中我们称之为增量序列
             for (int nums = arr.length / 2; nums > 0; nums /= 2) {
+
                 // 从 gap 开始，按照顺序将每个元素依次向前插入自己所在的组
                 for (int i = nums; i < arr.length; i++) {
                     // currentNumber 站起来，开始找位置
                     int cur = arr[i];
                     // 该组前一个数字的索引
                     int preIndex = i - nums;
-                    while (preIndex >= 0 && cur < arr[preIndex]) {
+                    while (preIndex >= 0 &&  arr[preIndex] > cur) {
                         // 向后挪位置
                         arr[preIndex + nums] = arr[preIndex];
                         preIndex -= nums;
