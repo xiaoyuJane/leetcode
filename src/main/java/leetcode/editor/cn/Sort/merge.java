@@ -27,7 +27,7 @@ public class merge {
         Solution solution = new merge().new Solution();
         int[] A = {4,5,6,0,0,0};
         int[] B = {1,2,3};
-        solution.merge(A,3,B,3);
+        solution.merge1(A,3,B,3);
         System.out.println(Arrays.toString(A));
     }
 
@@ -57,6 +57,23 @@ public class merge {
                 A[i++] = B[j++];
             }
 
+        }
+
+
+        //官方解法，逆向合并
+        public void merge1(int[] A, int m, int[] B, int n){
+            int i=m-1,j=n-1;
+            int tail = m+n-1;
+
+            int tmp;
+            while (i>=0 ||j>=0 ){
+                if (i == -1) tmp = B[j--]; //A遍历完了，拿B赋值
+                else if (j == -1) tmp = A[i--]; //B遍历完了，拿A赋值
+                else if (A[i]>B[j]) tmp=A[i--];  //取最大值
+                else tmp = B[j--];
+                A[tail--] = tmp;
+
+            }
         }
     }
 //leetcode submit region begin(Prohibit modification and deletion)
