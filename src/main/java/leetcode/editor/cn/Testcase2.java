@@ -86,6 +86,13 @@ public class Testcase2 {
 //        System.out.println(str);
 
 
+        // 测试i++ 与i的关系
+        int[] temp = {1,2};
+        int i=0;
+        System.out.println(temp[i++]);  //打印temp[0]
+        System.out.println(i); //i=1
+
+
 
 
     }
