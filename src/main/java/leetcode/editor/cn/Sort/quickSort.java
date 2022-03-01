@@ -36,7 +36,7 @@ public class quickSort {
 
            int middle = partition(arr,start,end);
            quickSort(arr,start,middle-1);
-            quickSort(arr,middle+1,end);
+           quickSort(arr,middle+1,end);
         }
 
         /**
