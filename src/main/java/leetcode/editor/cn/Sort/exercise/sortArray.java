@@ -1,4 +1,4 @@
-package leetcode.editor.cn.Sort;
+package leetcode.editor.cn.Sort.exercise;
 
 /**
  * 给你一个整数数组 nums，请你将该数组升序排列。

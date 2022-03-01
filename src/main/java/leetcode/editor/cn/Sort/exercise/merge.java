@@ -1,4 +1,4 @@
-package leetcode.editor.cn.Sort;
+package leetcode.editor.cn.Sort.exercise;
 
 import java.util.Arrays;
 

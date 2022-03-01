@@ -1,4 +1,4 @@
-package leetcode.editor.cn.Sort;
+package leetcode.editor.cn.Sort.exercise;
 
 /**
  * 剑指 Offer 51. 数组中的逆序对
