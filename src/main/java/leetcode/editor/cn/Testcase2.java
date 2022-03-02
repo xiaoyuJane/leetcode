@@ -3,6 +3,8 @@ package leetcode.editor.cn;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.Comparator;
 
 public class Testcase2 {
     public static void main(String[] args) {
@@ -86,13 +88,33 @@ public class Testcase2 {
 //        System.out.println(str);
 
 
-        // 测试i++ 与i的关系
-        int[] temp = {1,2};
-        int i=0;
-        System.out.println(temp[i++]);  //打印temp[0]
-        System.out.println(i); //i=1
+//        // 测试i++ 与i的关系
+//        int[] temp = {1,2};
+//        int i=0;
+//        System.out.println(temp[i++]);  //打印temp[0]
+//        System.out.println(i); //i=1
+
+        //o1.compareTo(o2) 当o1<o2 返回o1-o2
+        Integer o1 = 1;
+        Integer o2 = 2;
+        int res = o1.compareTo(o2);
+        System.out.println(o1.compareTo(o2) == o1-o2);
+
+        Integer[] a = {9,8,7,2,3,4,1,0,6,5};
+        Arrays.sort(a,new Comparator<Integer>(){ //升序实现1
+                @Override
+                public int compare(Integer o1, Integer o2) {
+                    if (o1>o2) return 1;  //o1-o2>0
+                    else if (o1<o2) return -1;
+                    else return 0;
+//                  return o1.compareTo(o2); // 上述三行等价于
+                }
+            });
+        Arrays.sort(a,(a1,a2)->a1-a2);  //升序是按照o1.compareTo(o2)来的，即(a1,a2)->a1-a2；
+        Arrays.sort(a,(a1,a2)->a2-a1); //降序就要取反
 
 
+        System.out.println(Arrays.toString(a));
 
 
     }
