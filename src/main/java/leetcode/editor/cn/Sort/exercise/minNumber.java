@@ -32,7 +32,7 @@ public class minNumber {
     public static void main(String[] args) {
         Solution solution = new minNumber().new Solution();
         int[] nums = {0,9,8,7,6,5,4,3,2,1};
-        System.out.println(solution.minNumber(nums));
+        System.out.println(solution.minNumber1(nums));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -72,6 +72,27 @@ public class minNumber {
             int temp = nums[i];
             nums[i] = nums [j];
             nums[j] = temp;
+        }
+
+
+        /**
+         自定义排序
+         * @param nums
+         * @return
+         */
+        public String minNumber1(int[] nums) {
+            String[] res = new String[nums.length];
+            for (int i = 0; i < nums.length; i++) {
+                res[i] = String.valueOf(nums[i]);
+            }
+
+            Arrays.sort(res,(x,y)->(x+y).compareTo(y+x));
+            StringBuilder ans = new StringBuilder();
+            for (String s:res
+                 ) {ans.append(s);
+            }
+
+            return ans.toString();
         }
 
     }
