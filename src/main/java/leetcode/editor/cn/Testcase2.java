@@ -129,5 +129,12 @@ public class Testcase2 {
             System.out.println(Arrays.toString(num));
         }*/
 
+        //int数组转化为String数组
+        int[] score = {9,8,7,3};
+        String[]res = Arrays.stream(score).mapToObj(String::valueOf).toArray(String[]::new);
+        System.out.println(Arrays.toString(res)); //[9, 8, 7, 3]
+        System.out.println(score.toString()); //[I@2e817b38
+
+
     }
 }
