@@ -10,13 +10,14 @@ import java.util.Arrays;
 public class ArrayMain {
     public static void main(String[] args) {
 
-        //Arrays.toString  Arrays有toString方法，可以将参数数组变成字符串依次输出，利用Arrays.toString(intArray)形式可以将数组转变成Arrays工作
+        //Arrays.toString  打印数组
+        // Arrays有toString方法，可以将参数数组变成字符串依次输出，
         int[] intArray = {10,20,30};
         String intStr = Arrays.toString(intArray); //将参数数组变成字符串,按照默认格式:[元素1,元素2,元素3…]
         System.out.println(intStr); //[10, 20, 30]
 
 
-        //Arrays.sort
+        //Arrays.sort 排序
         int[] array1 = {2,3,1,5,4};
         Arrays.sort(array1); //默认情况下是从小到大排列
         System.out.println(Arrays.toString(array1)); //[1, 2, 3, 4, 5]
