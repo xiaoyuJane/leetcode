@@ -44,6 +44,7 @@ public class generate {
 
         }
 
+        //递归，自己调用自己
         private List<Integer> generateRow(int numRows){
             if (numRows == 1) return Arrays.asList(1);
             if (numRows == 2) return Arrays.asList(1,1);
@@ -59,6 +60,24 @@ public class generate {
             res.add(1);
             return res;
         }
+
+
+        //不用自己调用自己的方式
+        private List<Integer> generateRow3(int numRows){
+            List<Integer> row = new ArrayList<Integer>();
+            row.add(1);
+            for (int i = 1; i <= numRows; ++i) {
+                row.add(0);
+                for (int j = i; j > 0; --j) {
+                    row.set(j, row.get(j) + row.get(j - 1));
+                }
+            }
+            return row;
+        }
+
+
+
+
     }
 //leetcode submit region begin(Prohibit modification and deletion)
 }
