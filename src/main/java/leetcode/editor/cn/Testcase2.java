@@ -94,10 +94,12 @@ public class Testcase2 {
 //        System.out.println(temp[i++]);  //打印temp[0]
 //        System.out.println(i); //i=1
 
-        //o1.compareTo(o2) 当o1<o2 返回o1-o2
+/*
+        //o1.compareTo(o2) 当o1<o2 返回-1
         Integer o1 = 1;
-        Integer o2 = 2;
-        int res = o1.compareTo(o2);
+        Integer o2 = 3;
+        int res = o1.compareTo(o2);  //-1
+        System.out.println(res);
         System.out.println(o1.compareTo(o2) == o1-o2);
 
         Integer[] a = {9,8,7,2,3,4,1,0,6,5};
@@ -112,10 +114,20 @@ public class Testcase2 {
             });
         Arrays.sort(a,(a1,a2)->a1-a2);  //升序是按照o1.compareTo(o2)来的，即(a1,a2)->a1-a2；
         Arrays.sort(a,(a1,a2)->a2-a1); //降序就要取反
-
-
         System.out.println(Arrays.toString(a));
+*/
 
+/*
+        int[] score = {10,3,8,9,4};
+        int[][] arr = new int[score.length][2];
+        for (int i = 0; i < score.length ; i++) {
+            arr[i][0] = score[i];
+            arr[i][1] = i;
+        }
+        Arrays.sort(arr,(a,b)->b[0]-a[0]); //按照第一维度降序排列
+        for (int[] num : arr) {
+            System.out.println(Arrays.toString(num));
+        }*/
 
     }
 }
