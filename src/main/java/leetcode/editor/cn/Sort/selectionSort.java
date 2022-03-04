@@ -43,42 +43,35 @@ public class selectionSort {
          * @param arr
          */
         public  void selectionSort2(int[] arr) {
-            int minIndex, maxIndex;
-            // i 只需要遍历一半
-            for (int i = 0; i < arr.length / 2; i++) { //外层是次数
-                minIndex = i;
-                maxIndex = i;
 
+            int n = arr.length;
+            // i 只需要遍历一半
+            for(int i = 0; i< n/2; i++){
+                int min = i;
+                int max = i;
                 //1.第二层遍历，找出最大值最下值下标，进行交换
-                for (int j = i + 1; j < arr.length - i; j++) { //内层是真正做选择的圈次
-                    if (arr[minIndex] > arr[j]) {
-                        minIndex = j;  // 记录最小值的下标
-                    }
-                    if (arr[maxIndex] < arr[j]) {
-                        maxIndex = j; // 记录最大值的下标
-                    }
+                for(int j = i+1;j<n-i;j++){ //内层是真正做选择的圈次
+                    if(arr[j]<arr[min]) min=j;
+                    if(arr[j]>arr[max]) max=j;
                 }
 
                 // 2.退出条件，当最大值和最小值都相等说明走到了尽头
-                // 如果 minIndex 和 maxIndex 都相等，那么他们必定都等于 i，且后面的所有数字都与 arr[i] 相等，此时已经排序完成
-                if (minIndex == maxIndex) break;
-
-                //3.1 交换最小值到头部i的位置
-                int temp = arr[i];
-                arr[i] = arr[minIndex];// 将最小元素交换至首位
-                arr[minIndex] = temp;
-
+                if(min == max) break;
+                swap(arr,i,min);
                 // 注意点：如果最大值的下标刚好是 i，由于 arr[i] 和 arr[minIndex] 已经交换了，所以这里要更新 maxIndex 的值。
-                if (maxIndex == i) maxIndex = minIndex;
-
-                // 3.2将最大元素交换至末尾
-                int lastIndex = arr.length - 1 - i;
-                temp = arr[lastIndex];
-                arr[lastIndex] = arr[maxIndex];
-                arr[maxIndex] = temp;
+                if(max == i) max=min;
+                swap(arr,n-i-1,max);
             }
+
+
         }
 
+
+        private void swap(int[] nums,int i,int j){
+            int tmp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = tmp;
+        }
 
 
 
