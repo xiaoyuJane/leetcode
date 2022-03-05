@@ -11,7 +11,6 @@ public class ArrayMain {
     public static void main(String[] args) {
 
         //Arrays.toString  打印数组
-        // Arrays有toString方法，可以将参数数组变成字符串依次输出，
         int[] intArray = {10,20,30};
         String intStr = Arrays.toString(intArray); //将参数数组变成字符串,按照默认格式:[元素1,元素2,元素3…]
         System.out.println(intStr); //[10, 20, 30]
@@ -22,6 +21,7 @@ public class ArrayMain {
         Arrays.sort(array1); //默认情况下是从小到大排列
         System.out.println(Arrays.toString(array1)); //[1, 2, 3, 4, 5]
 
+        //Arrays.sort 排序string ,默认按照字母升序来
         String[] array2 = {"bbb","cc","a","ddd"};
         Arrays.sort(array2);
         System.out.println(Arrays.toString(array2)); //[a, bbb, cc, ddd] 默认按照字母升序来
