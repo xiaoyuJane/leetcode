@@ -129,12 +129,31 @@ public class Testcase2 {
             System.out.println(Arrays.toString(num));
         }*/
 
-        //int数组转化为String数组
-        int[] score = {9,8,7,3};
-        String[]res = Arrays.stream(score).mapToObj(String::valueOf).toArray(String[]::new);
-        System.out.println(Arrays.toString(res)); //[9, 8, 7, 3]
-        System.out.println(score.toString()); //[I@2e817b38
+//        //int数组转化为String数组
+//        int[] score = {9,8,7,3};
+//        String[]res = Arrays.stream(score).mapToObj(String::valueOf).toArray(String[]::new);
+//        System.out.println(Arrays.toString(res)); //[9, 8, 7, 3]
+//        System.out.println(score.toString()); //[I@2e817b38
 
+
+       /* //int转String，使用String.valueOf
+        int a = 1;
+        int b = 2;
+        String ab = String.valueOf(a) + String.valueOf(b); //字符串12
+        String ba = String.valueOf(b) + String.valueOf(a); //字符串21
+        //String 转int ，使用Integer.parseInt
+        int c = Integer.parseInt(ab);
+        int d = Integer.parseInt(ba);
+        System.out.println(c);
+        System.out.println(d);
+        boolean res = Integer.parseInt(ab) < Integer.parseInt(ba);
+        System.out.println(res);*/
+
+        int[] score = {9,8,7,3};
+        String res = Arrays.toString(score);
+        System.out.println(res);
+//        res.replaceAll("\\[|]|,|\\s","");
+        System.out.println(res.replaceAll("\\[|]|,|\\s",""));
 
     }
 }
