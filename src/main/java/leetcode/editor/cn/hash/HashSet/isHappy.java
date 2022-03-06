@@ -41,7 +41,7 @@ import java.util.Set;
 
  */
 
-//判断循环也可以用双指针
+//TODO 判断循环也可以用双指针
 public class isHappy {
     public static void main(String[] args) {
         Solution solution = new isHappy().new Solution();
