@@ -35,6 +35,7 @@ public class relativeSortArray {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+        //计数排序的变种
         public int[] relativeSortArray(int[] arr1, int[] arr2) {
             int n = arr1.length;
             int min = arr1[0], max=arr1[0];
