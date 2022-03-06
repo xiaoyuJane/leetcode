@@ -69,7 +69,7 @@ public class minSubArrayLen {
            return res == Integer.MAX_VALUE ? 0: res;
         }
 
-        //滑动窗口
+        //*******************滑动窗口
         public int minSubArrayLen2(int target, int[] nums){
             int n = nums.length;
             int res = Integer.MAX_VALUE;
