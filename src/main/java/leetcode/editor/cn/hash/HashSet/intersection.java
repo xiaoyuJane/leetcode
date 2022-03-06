@@ -1,7 +1,6 @@
 package leetcode.editor.cn.hash.HashSet;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 两个数组的交集
@@ -37,7 +36,30 @@ public class intersection {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+        //使用两个set来存储
         public int[] intersection(int[] nums1, int[] nums2) {
+          Set<Integer> set = new HashSet<>();
+          for (int num : nums1){
+              if (!set.contains(num)) set.add(num);
+          }
+
+          Set<Integer>  res = new HashSet<>();
+          for (int num : nums2){
+              if (set.contains(num)) res.add(num);
+          }
+
+          //将set转化为int[]
+          int[] nums = new int[res.size()];
+          int i = 0;
+          for (int num :res){
+              nums[i++] = num;
+          }
+          return  nums;
+        }
+
+
+        //使用hashmap来做
+        public int[] intersection2(int[] nums1, int[] nums2){
             Map<Integer,Boolean> map = new HashMap<>();
             for (int num: nums1){
                 if (!map.containsKey(num)) map.put(num,false);
@@ -45,11 +67,11 @@ public class intersection {
             for (int num: nums2){
                 if(map.containsKey(num)) map.put(num,true);
             }
-
-            return nums1;
+            return  nums1;
 
 
         }
+
     }
 //leetcode submit region begin(Prohibit modification and deletion)
 }
