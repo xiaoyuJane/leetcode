@@ -14,8 +14,8 @@ public class HashMapMain {
 
 
         // 3. insert a new (key, value) pair or update the value of existed key
-        hashmap.put(1, 1);
-        hashmap.put(1, 2);
+        System.out.println(hashmap.put(1, 1)); //新插入返回null，如果存在旧值，返回上一次的value
+        System.out.println(hashmap.put(1, 2));
 
         // 4. get the value of specific key
         System.out.println("The value of key 1 is: " + hashmap.get(1));
