@@ -1,10 +1,6 @@
 package leetcode.editor.cn;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Comparator;
+import java.util.*;
 
 public class Testcase2 {
     public static void main(String[] args) {
@@ -149,11 +145,29 @@ public class Testcase2 {
         boolean res = Integer.parseInt(ab) < Integer.parseInt(ba);
         System.out.println(res);*/
 
+/*       //正则
         int[] score = {9,8,7,3};
         String res = Arrays.toString(score);
         System.out.println(res);
 //        res.replaceAll("\\[|]|,|\\s","");
-        System.out.println(res.replaceAll("\\[|]|,|\\s",""));
+        System.out.println(res.replaceAll("\\[|]|,|\\s",""));*/
+
+        // hashMap 输出是无序的，并不是按照输入的顺序
+        Map<Character, Integer> hashmap = new HashMap<>();
+        hashmap.put('l',0);
+        hashmap.put('e',0);
+        hashmap.put('t',0);
+        hashmap.put('v',0);
+        for (Map.Entry<Character, Integer> entry:hashmap.entrySet()){
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+        }
+       /* 输出：
+        t = 0
+        e = 0
+        v = 0
+        l = 0*/
+
+
 
     }
 }
