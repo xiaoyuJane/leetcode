@@ -1,6 +1,8 @@
 package leetcode.editor.cn.hash.HashSet;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 //哈希集是集合的实现之一，它是一种存储不重复值的数据结构。
@@ -14,6 +16,14 @@ public class HashSetMain {
         hashSet.add(3);
         hashSet.add(2);
         hashSet.add(1);
+
+        System.out.println(hashSet);
+
+        //set获取第一个元素
+        System.out.println(hashSet.iterator().next());
+        System.out.println(hashSet.toArray()[0]);
+        List<Integer> list = new ArrayList<>(hashSet);
+        System.out.println(list.get(0));
 
         // 3. remove the key
         hashSet.remove(2);
