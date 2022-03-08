@@ -44,12 +44,13 @@ public class BestTimeToBuyAndSellStock{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int maxProfit(int[] prices) {
-        int result = 0;
-        int min = prices[0];
+        //初始值
+        int result = 0;  //利润
+        int min = prices[0]; //买入点
 
         for (int i=0;i<prices.length;i++){
             if (prices[i]<min) min=prices[i];
-            result = Math.max(result,prices[i]-min);
+            result = Math.max(result,prices[i]-min); //最大值，有两种选择，卖出或者不卖
         }
 
 

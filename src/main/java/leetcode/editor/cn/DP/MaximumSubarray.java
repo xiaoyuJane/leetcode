@@ -50,14 +50,35 @@ public class MaximumSubarray{
     public static void main(String[] args) {
 
         Solution solution = new MaximumSubarray().new Solution();
-        int[] nums = {5,4,-1,7,8};
-        int res = solution.maxSubArray(nums);
+        int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+        int res = solution.maxSubArray1(nums);
         System.out.println(res);
     }
     
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+        //动态规划，对于最大值dp数组来说，dp[k],取决于dp[k-1]，或者是k自成一段，
+        // 写出方程为 dp[k] = max(dp[k-1]+nums[k],nums[k])
+
     public int maxSubArray(int[] nums) {
+        int n = nums.length;
+       int[] dp = new int[n];
+       dp[0] = nums[0];
+        for (int i = 1; i < n; i++) {
+            dp[i] = Math.max(dp[i-1] + nums[i],nums[i]);
+        }
+
+        int res = dp[0];
+        for (int item :dp){
+            res = Math.max(res,item);
+        }
+
+        return res;
+
+    }
+
+    //使用两个变量来代替数组
+    public int maxSubArray1(int[] nums) {
         int result = nums[0];
         int sum = nums[0];
 

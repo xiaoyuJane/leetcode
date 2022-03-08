@@ -51,7 +51,7 @@ package leetcode.editor.cn.DP;
 // Related Topics 数组 动态规划 
 // 👍 984 👎 0
 
-//使用递归的方法(状态方程)
+//使用动态规划的方法(状态方程)
 
 public class BestTimeToBuyAndSellStockIii2{
     public static void main(String[] args) {
@@ -61,15 +61,16 @@ public class BestTimeToBuyAndSellStockIii2{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int maxProfit(int[] prices) {
-        int buy1 = -prices[0];
-        int sell1 = 0;
-        int buy2 = -prices[0];
-        int sell2 = 0;
+        //状态初始化
+        int buy1 = -prices[0]; //进行了一次买入操作的利润值
+        int sell1 = 0;  //进行了一次卖出操作的利润值（之前肯定有买）
+        int buy2 = -prices[0]; //进行了第二次买入操作的利润值
+        int sell2 = 0; //进行了第二次卖出操作的利润值
 
-        for (int i=1;i<prices.length;i++){
-            buy1 = Math.max(buy1,-prices[i]);
-            sell1 = Math.max(sell1,buy1+prices[i]); //卖出就是加上当天价格
-            buy2 = Math.max(buy2,sell1-prices[i]); //买入就是减去当天价格
+        for (int i=1;i<prices.length;i++){ //相当于从第二天开始算起，这里没有用数组，而是复用了上面四个变量，减少了空间复杂度
+            buy1 = Math.max(buy1,0-prices[i]);  //利润为啥都不做的buy1（上次值），和做了（买入，因为没有卖出操作，所以利润是亏的，是0-price）
+            sell1 = Math.max(sell1,buy1+prices[i]); //啥都不做，或者是卖出了
+            buy2 = Math.max(buy2,sell1-prices[i]); //买入加price，卖出减price
             sell2 = Math.max(sell2,buy2+prices[i]);
         }
         return sell2;
