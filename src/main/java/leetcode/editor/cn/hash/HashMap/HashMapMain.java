@@ -11,6 +11,7 @@ public class HashMapMain {
         // 2. insert a new (key, value) pair
         hashmap.putIfAbsent(0, 0);
         hashmap.putIfAbsent(2, 3);
+        System.out.println( "The value of key 3 is: " + hashmap.get(3));
 
 
         // 3. insert a new (key, value) pair or update the value of existed key
