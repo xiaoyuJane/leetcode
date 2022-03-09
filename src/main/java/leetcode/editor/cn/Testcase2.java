@@ -152,20 +152,7 @@ public class Testcase2 {
 //        res.replaceAll("\\[|]|,|\\s","");
         System.out.println(res.replaceAll("\\[|]|,|\\s",""));*/
 
-        // hashMap 输出是无序的，并不是按照输入的顺序
-        Map<Character, Integer> hashmap = new HashMap<>();
-        hashmap.put('l',0);
-        hashmap.put('e',0);
-        hashmap.put('t',0);
-        hashmap.put('v',0);
-        for (Map.Entry<Character, Integer> entry:hashmap.entrySet()){
-            System.out.println(entry.getKey() + " = " + entry.getValue());
-        }
-       /* 输出：
-        t = 0
-        e = 0
-        v = 0
-        l = 0*/
+
 
 
 
