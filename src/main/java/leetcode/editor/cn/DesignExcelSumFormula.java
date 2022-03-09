@@ -1,5 +1,4 @@
 package leetcode.editor.cn;
-
 //你的任务是实现 Excel 的求和功能，具体的操作如下： 
 //
 // Excel(int H, char W): 这是一个构造函数，输入表明了 Excel 的高度和宽度。H 是一个正整数，范围从 1 到 26，代表高度。W 
@@ -69,36 +68,39 @@ package leetcode.editor.cn;
 // 👍 27 👎 0
 
 public class DesignExcelSumFormula{
-    public static void main(String[] args) {
-        Solution solution = new DesignExcelSumFormula().new Solution();
+    public static void main(String[] args){
+        Excel solution = new DesignExcelSumFormula().new Excel(1,'A');
+    }
+//leetcode submit region begin(Prohibit modification and deletion)
+class Excel {
+        int row;
+        int col;
+        int[][] excel;
+
+    public Excel(int height, char width) {
+        this.col = width - 'A' +1;
+        this.row = height;
+        this.excel = new int[this.row][this.col];
+
     }
     
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-
-        int height;
-        int width;
-
-    public Solution(int height, char width) {
-        this.height = height;
-        this.width = width;
-
-    }
-
-    public Solution() {
-
-    }
-
     public void set(int row, char column, int val) {
+        this.row = row-1;
+        this.col = column-'A';
+        this.excel[this.row][this.col] = val;
 
     }
     
     public int get(int row, char column) {
-        return row+column;
+        this.row = row-1;
+        this.col = column-'A';
+        return this.excel[this.row][this.col];
+
     }
     
     public int sum(int row, char column, String[] numbers) {
-        return row+column;
+        int sum1 = this.get(row,column);
+
     }
 }
 
