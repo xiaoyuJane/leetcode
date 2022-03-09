@@ -1,6 +1,8 @@
 package leetcode.editor.cn.hash.HashMap;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class HashMapMain {
@@ -43,6 +45,29 @@ public class HashMapMain {
         if (hashmap.isEmpty()) {
             System.out.println("hash map is empty now!");
         }
+
+
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        List<Integer> values = new ArrayList<>();
+        map.put(1,values);
+        System.out.println(map.get(1).isEmpty());  //true
+        System.out.println(map.containsKey(2));  //false
+
+
+        // hashMap 输出是无序的，并不是按照输入的顺序
+//        Map<Character, Integer> hashmap = new HashMap<>();
+//        hashmap.put('l',0);
+//        hashmap.put('e',0);
+//        hashmap.put('t',0);
+//        hashmap.put('v',0);
+//        for (Map.Entry<Character, Integer> entry:hashmap.entrySet()){
+//            System.out.println(entry.getKey() + " = " + entry.getValue());
+        // }
+       /* 输出：
+        t = 0
+        e = 0
+        v = 0
+        l = 0*/
     }
 
 
