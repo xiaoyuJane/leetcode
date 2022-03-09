@@ -60,8 +60,8 @@ public class canVisitAllRooms {
         public boolean canVisitAllRooms(List<List<Integer>> rooms) {
             int n = rooms.size();
             int[] visited = new int[n];  //初始为0，表示都未访问过
-
             Queue<List<Integer>> queue= new LinkedList<List<Integer>>();
+
             queue.offer(rooms.get(0));
             visited[0] = 1; //1表示访问了
 

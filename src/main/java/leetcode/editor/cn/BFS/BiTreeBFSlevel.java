@@ -30,13 +30,15 @@ public class BiTreeBFSlevel {
 
             while (!queue.isEmpty()){
                 int size = queue.size();  //size表示每一层的节点数
+
                 for (int i=0;i<size;i++){
                     TreeNode node = queue.poll();
                     System.out.println("node.val:" +node.val);
                     if (node.left!=null) queue.offer(node.left);
                     if (node.right!=null) queue.offer(node.right);
                 }
-                level++;
+
+                level++; //遍历完每层后，level自加
                 System.out.println(level);
             }
 
