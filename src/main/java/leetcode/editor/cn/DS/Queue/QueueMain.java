@@ -1,4 +1,4 @@
-package leetcode.editor.cn.algorithm.BFS.Queue;
+package leetcode.editor.cn.DS.Queue;
 
 import TestAndTool.tool.MyQueue1;
 

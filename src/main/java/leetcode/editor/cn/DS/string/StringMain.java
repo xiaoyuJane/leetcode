@@ -9,6 +9,11 @@ package leetcode.editor.cn.DS.string;
  */
 public class StringMain {
     public static void main(String[] args) {
+        String str = "A4";
+        System.out.println(str.substring(1)); //4
+        System.out.println(str.charAt(0)); //A
+
+
         // initialize
         String s1 = "Hello World";
         System.out.println("s1 is \"" + s1 + "\"");

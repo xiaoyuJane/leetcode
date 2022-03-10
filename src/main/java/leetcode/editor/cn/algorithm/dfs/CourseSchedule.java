@@ -43,9 +43,12 @@ class Solution {
         List<List<Integer>> adjacency = new ArrayList<>();
         for(int i = 0; i < numCourses; i++)
             adjacency.add(new ArrayList<>());
+
         int[] flags = new int[numCourses];
+
         for(int[] cp : prerequisites)
             adjacency.get(cp[1]).add(cp[0]);
+
         for(int i = 0; i < numCourses; i++)
             if(!dfs(adjacency, flags, i)) return false;
         return true;
