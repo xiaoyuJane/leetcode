@@ -10,29 +10,25 @@ package leetcode.editor.cn.DS.string;
 public class StringMain {
     public static void main(String[] args) {
         String str = "A4";
-        System.out.println(str.substring(1)); //4
-        System.out.println(str.charAt(0)); //A
+        System.out.println(str.substring(1)); //4，一个参数，定义起始位置，默认到末尾
+        System.out.println(str.charAt(0)); //A ，返回的是位置0对应的字符
 
 
-        // initialize
         String s1 = "Hello World";
-        System.out.println("s1 is \"" + s1 + "\"");
         String s2 = s1;
-        System.out.println("s2 is another reference to s1.");
+        System.out.println(s1.equals(s2));  //true ,equals 用来比较内容
+        // true since s1 and s2 is the reference of the same object
+        System.out.println("s1 and s2: " + (s1 == s2)); //true
+
+
         String s3 = new String(s1);
-        System.out.println("s3 is a copy of s1.");
+        System.out.println("s1 and s3: " + (s1 == s3)); //false s3指向的是另外一个对象
+        System.out.println("s1 and s3: " + (s1.equals(s3))); //true
 
         // compare using '=='
-        System.out.println("Compared by '==':");
         // true since string is immutable and s1 is binded to "Hello World"
-        System.out.println("s1 and \"Hello World\": " + (s1 == "Hello World"));
+        System.out.println("s1 and \"Hello World\": " + (s1 == "Hello World")); //true
 
-        // true since s1 and s2 is the reference of the same object
-        System.out.println("s1 and s2: " + (s1 == s2));
-
-
-        // false since s3 is refered to another new object
-        System.out.println("s1 and s3: " + (s1 == s3));
 
         // compare using 'equals'
         System.out.println("Compared by 'equals':");
