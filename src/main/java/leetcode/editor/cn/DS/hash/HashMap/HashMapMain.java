@@ -23,8 +23,12 @@ public class HashMapMain {
         // 4. get the value of specific key
         System.out.println("The value of key 1 is: " + hashmap.get(1));
 
+        for (Map.Entry<Integer, Integer> entry : hashmap.entrySet()) {
+            System.out.print("(" + entry.getKey() + "," + entry.getValue() + ") ");
+        }
+        System.out.println("are in the hash map.");
         // 5. delete a key
-        hashmap.remove(2);
+        System.out.println("remove 2 return is: " + hashmap.remove(2));
 
         // 6. check if a key is in the hash map
         if (!hashmap.containsKey(2)) {
@@ -52,6 +56,9 @@ public class HashMapMain {
         map.put(1,values);
         System.out.println(map.get(1).isEmpty());  //true
         System.out.println(map.containsKey(2));  //false
+
+        Map<String, String[]> map1 = new HashMap<>();
+        System.out.println(map1.remove(1)); //null
 
 
         // hashMap 输出是无序的，并不是按照输入的顺序

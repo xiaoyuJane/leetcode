@@ -1,12 +1,14 @@
+package leetcode.editor.cn.DS.hash.HashMap;
+
 import java.util.*;
 
-public class Test {
+public class circleDependency {
     public static void main(String[] args) {
        // [[],[0,2],[]] true
         //[[],[0,2],[1]] false
         //[[],[0,2,3,4],[3],[1,2],[],[1,4]]
         int[][] nums = new int[][]{{},{0,2,3,4},{3},{1,2},{},{1,4}};
-        Solution solution = new Test().new Solution();
+        Solution solution = new circleDependency().new Solution();
         System.out.println(solution.getAllValue(nums));
     }
 

@@ -46,7 +46,6 @@ class Solution {
         //初始化
         int[] indegrees = new int[numCourses];
         List<List<Integer>> adjacency = new ArrayList<>();
-        Queue<Integer> queue = new LinkedList<>();
         for(int i = 0; i < numCourses; i++)
             adjacency.add(new ArrayList<>());
         for(int[] cp : prerequisites) {
@@ -54,6 +53,7 @@ class Solution {
             adjacency.get(cp[1]).add(cp[0]);
         }
 
+        Queue<Integer> queue = new LinkedList<>();
         // 将入度为0的放进队列中，是起点
         for(int i = 0; i < numCourses; i++)
             if(indegrees[i] == 0) queue.add(i);

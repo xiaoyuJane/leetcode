@@ -1,4 +1,5 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.DS.hash.HashMap;
+
 //你的任务是实现 Excel 的求和功能，具体的操作如下： 
 //
 // Excel(int H, char W): 这是一个构造函数，输入表明了 Excel 的高度和宽度。H 是一个正整数，范围从 1 到 26，代表高度。W 
@@ -67,41 +68,72 @@ package leetcode.editor.cn;
 // Related Topics 图 设计 拓扑排序 
 // 👍 27 👎 0
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DesignExcelSumFormula{
-    public static void main(String[] args){
-        Excel solution = new DesignExcelSumFormula().new Excel(1,'A');
+    public static void main(String[] args) {
+        Excel  solution = new DesignExcelSumFormula().new Excel (3,'c');
     }
+    
 //leetcode submit region begin(Prohibit modification and deletion)
-class Excel {
-        int row;
-        int col;
-        int[][] excel;
+//    我们在更改了 C2 后，需要找到所有直接或间接依赖于 C2 的那些格子
+//    如果 x 依赖于 y，那么我们从 y 到 x 连一条有向边
+//    对于某个节点 xc，当它的值被更改后，所有它可以走到的节点 xp[1..k] 都需要被更改。
+//    同时，这 k 个可以走到的节点需要指定修改顺序
 
-    public Excel(int height, char width) {
-        this.col = width - 'A' +1;
-        this.row = height;
-        this.excel = new int[this.row][this.col];
+class Excel  {
+    private Map<String, String[]> map; //记录某个格子是否有依赖的格式，即该格子为公式计算
+    private int[][] m;
 
+    public Excel(int h, char w) {
+        map = new HashMap<>();
+        m = new int[h][w - 'A' + 1];
     }
-    
-    public void set(int row, char column, int val) {
-        this.row = row-1;
-        this.col = column-'A';
-        this.excel[this.row][this.col] = val;
 
+    //set常值
+    public void set(int r, char c, int v) {
+        String key = r + "#" + c;
+        map.remove(key);  //如果set值，那么该格子是没有依赖的，所以要remove
+        m[r - 1][c - 'A'] = v;
     }
-    
-    public int get(int row, char column) {
-        this.row = row-1;
-        this.col = column-'A';
-        return this.excel[this.row][this.col];
 
+    //set公式值
+    public int sum(int r, char c, String[] strs) {
+        int sum = 0;
+        for (String str : strs) {
+            int index = str.indexOf(":");
+            if (index == -1) {
+                sum += get(Integer.parseInt(str.substring(1)), str.charAt(0));
+            } else {
+                String a = str.substring(0, index);
+                String b = str.substring(index + 1);
+                int x1 = Integer.parseInt(a.substring(1)), y1 = a.charAt(0) - 'A';
+                int x2 = Integer.parseInt(b.substring(1)), y2 = b.charAt(0) - 'A';
+                for (int i = x1; i <= x2; ++i) {
+                    for (int j = y1; j <= y2; ++j) {
+                        sum += get(i, (char) (j + 'A'));
+                    }
+                }
+            }
+        }
+        map.put(r + "#" + c, strs);
+        return sum;
     }
-    
-    public int sum(int row, char column, String[] numbers) {
-        int sum1 = this.get(row,column);
 
+    //获取值，
+    // 如果该格子未被标记，那么就属于常量，直接返回即可；
+    // 如果该格子被标记，属于变量，需要重新触发一次计算
+    public int get(int r, char c) {
+        String key = r + "#" + c;
+        if (map.containsKey(key)) {
+            return sum(r, c, map.get(key));
+        }
+        return m[r - 1][c - 'A'];
     }
+
+
+
 }
 
 /**
