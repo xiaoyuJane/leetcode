@@ -1,4 +1,4 @@
-package leetcode.editor.cn.offer;
+package leetcode.editor.cn.algorithm.dfs;
 
 //给定一个无重复元素的正整数数组 candidates 和一个正整数 target ，找出 candidates 中所有可以使数字和为目标数 target 的
 //唯一组合。 
@@ -65,9 +65,9 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-public class Ygoe9J{
+public class combinationSum {
     public static void main(String[] args) {
-        Solution solution = new Ygoe9J().new Solution();
+        Solution solution = new combinationSum().new Solution();
     }
     
 //leetcode submit region begin(Prohibit modification and deletion)
