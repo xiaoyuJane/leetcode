@@ -1,4 +1,4 @@
-package leetcode.editor.cn.official;
+package leetcode.editor.cn.DS.string;
 
 //实现 strStr() 函数。 
 //
@@ -54,9 +54,9 @@ package leetcode.editor.cn.official;
 //
 
 
-public class ImplementStrstr{
+public class ImplementStrstrKMP {
     public static void main(String[] args) {
-        Solution solution = new ImplementStrstr().new Solution();
+        Solution solution = new ImplementStrstrKMP().new Solution();
     }
     
 //leetcode submit region begin(Prohibit modification and deletion)

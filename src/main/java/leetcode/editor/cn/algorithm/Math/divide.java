@@ -1,4 +1,4 @@
-package leetcode.editor.cn.offer;
+package leetcode.editor.cn.algorithm.Math;
 
 //给定两个整数 a 和 b ，求它们的除法的商 a/b ，要求不得使用乘号 '*'、除号 '/' 以及求余符号 '%' 。 
 //
@@ -57,9 +57,9 @@ package leetcode.editor.cn.offer;
 // Related Topics 位运算 数学 
 // 👍 73 👎 0
 
-public class Xoh6Oh{
+public class divide {
     public static void main(String[] args) {
-        Solution solution = new Xoh6Oh().new Solution();
+        Solution solution = new divide().new Solution();
         int a=-1,b=-1;
         int res = solution.divide(a,b);
         System.out.println(res);
