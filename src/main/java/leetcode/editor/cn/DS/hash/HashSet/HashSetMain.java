@@ -16,8 +16,8 @@ public class HashSetMain {
         hashSet.add(3);
         hashSet.add(2);
         hashSet.add(1);
-
-        System.out.println(hashSet);
+        System.out.println("11:"+hashSet.add(1)); //11:false 重复添加返回false
+        System.out.println("11:"+hashSet); //直接打印11:[1, 2, 3]
 
         //set获取第一个元素
         System.out.println(hashSet.iterator().next());
