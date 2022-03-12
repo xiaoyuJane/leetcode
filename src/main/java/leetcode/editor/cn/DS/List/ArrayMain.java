@@ -18,6 +18,9 @@ public class ArrayMain {
 
         //Arrays.sort 排序
         int[] array1 = {2,3,1,5,4};
+        int[] array11 = array1.clone();
+        System.out.println("11:"+Arrays.toString(array11));
+        System.out.println("11:"+ Arrays.equals(array11,array1));
         Arrays.sort(array1); //默认情况下是从小到大排列
         System.out.println(Arrays.toString(array1)); //[1, 2, 3, 4, 5]
 
