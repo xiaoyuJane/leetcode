@@ -1,4 +1,4 @@
-package leetcode.editor.cn.DS.Stack;
+package leetcode.editor.cn.DS.Stack.exercise;
 
 //给定一个经过编码的字符串，返回它解码后的字符串。
 //
