@@ -16,7 +16,7 @@ import java.util.Stack;
 
         public void push(int val) {
             if (stack.isEmpty()) stack.push(new StackNode(val,val));
-            else stack.push(new StackNode(val,Math.min(val,getMin())));
+            else stack.push(new StackNode(val,Math.min(val,getMin()))); //迭代的思想
 
         }
 
