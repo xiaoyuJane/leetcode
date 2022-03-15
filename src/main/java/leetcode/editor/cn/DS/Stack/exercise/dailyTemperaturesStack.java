@@ -1,4 +1,4 @@
-package leetcode.editor.cn.DS.Stack;
+package leetcode.editor.cn.DS.Stack.exercise;
 
 import java.util.Deque;
 import java.util.LinkedList;

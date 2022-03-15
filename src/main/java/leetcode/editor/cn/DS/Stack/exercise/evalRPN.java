@@ -1,4 +1,4 @@
-package leetcode.editor.cn.DS.Stack;
+package leetcode.editor.cn.DS.Stack.exercise;
 
 //逆波兰表达式是一种后缀表达式，所谓后缀就是指算符写在后面。
 //        平常使用的算式则是一种中缀表达式，如 ( 1 + 2 ) * ( 3 + 4 ) 。
