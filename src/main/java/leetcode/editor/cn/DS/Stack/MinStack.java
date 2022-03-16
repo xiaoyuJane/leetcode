@@ -16,7 +16,7 @@ import java.util.Stack;
 
         public void push(int val) {
             if (stack.isEmpty()) stack.push(new StackNode(val,val));
-            else stack.push(new StackNode(val,Math.min(val,getMin()))); //迭代的思想
+            else stack.push(new StackNode(val,Math.min(val,getMin()))); //在push的同时迭代计算最小值
 
         }
 
@@ -33,8 +33,7 @@ import java.util.Stack;
 
         public int getMin() {
             if (stack.isEmpty()) throw new IllegalStateException("栈为空！");
-            return stack.peek().min;
-
+            return stack.peek().min; //栈顶的min值
         }
 
 

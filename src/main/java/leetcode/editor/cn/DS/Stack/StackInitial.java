@@ -12,7 +12,7 @@ public class StackInitial {
         Deque<Integer> stack2 = new LinkedList<>();
 
         Stack<Integer> stack = new Stack<>();
-        Deque<Integer> deque = new ArrayDeque<>();
+        Deque<Integer> deque = new ArrayDeque<>();  //推荐写法
 
         stack.push(8);
         stack.push(9);
@@ -22,10 +22,12 @@ public class StackInitial {
         //stack的打印和转换成list的方法
         System.out.println(new ArrayList<>(stack)); // [8,9]
         List<Integer> list1 = stack.stream().collect(Collectors.toList());//[8,9]
+        System.out.println(list1);
 
-        // deque转成ArrayList或stream时保留了“后进先出”的语义
+        // 推荐使用Deque定义，deque转成ArrayList或stream时保留了“后进先出”的语义
         System.out.println(new ArrayList<>(deque)); // [9,8]
         List<Integer> list2 = deque.stream().collect(Collectors.toList());//[9,8]
+        System.out.println(list2);
     }
 
 }
