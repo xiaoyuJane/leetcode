@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
+//二叉树的中序遍历
 public class inorderTraversalStack {
     public static void main(String[] args) {
         Solution solution = new inorderTraversalStack().new Solution();
@@ -24,15 +25,19 @@ public class inorderTraversalStack {
 
             Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
             List<Integer> res = new ArrayList<Integer>();
+            //中序遍历，左中右的顺序
 
             while (root!=null ||!stack.isEmpty()){
+                //1.找左子树
                 while (root!=null){
                     stack.push(root);
-                    root = root.left;
+                    root = root.left; //记录到左子树的路径节点
                 }
-                TreeNode top = stack.pop();
+                //弹出最近的左子节点
+                TreeNode top = stack.pop(); //弹出最近的左子节点
                 res.add(top.val);
-                root = top.right;
+
+                root = top.right; //遍历右子树
 
             }
             return res;
