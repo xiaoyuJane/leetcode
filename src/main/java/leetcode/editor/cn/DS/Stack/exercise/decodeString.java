@@ -54,6 +54,7 @@ public class decodeString {
     class Solution {
         //遇到括号匹配问题，使用栈，一定要遇到右括号才能出栈
         //遍历到最后，有个res是没有入栈的，与已经入栈的token进行拼接
+        //我们可以把字母、数字和括号看成是独立的 TOKEN，并用栈来维护这些 TOKEN。
 
         public String decodeString(String s) {
 
@@ -69,7 +70,7 @@ public class decodeString {
                     num = num *10 + c - '0';// 如果是21，那么逐步计算
                  //2.字符[
                 }else if (c == '['){
-                    //准备开始计数,把字符和数组分别放入字符栈和数字栈
+                    //入栈时刻，准备开始计数,把字符和数组分别放入字符栈和数字栈
                     resStack.push(res);
                     numStack.push(num);
                     //重新开始计算
@@ -77,7 +78,7 @@ public class decodeString {
                     num = 0;
                 }
                  else if (c == ']'){
-                     //收割时刻 ,字符和数字出栈
+                     //出栈时刻，解析 ,字符和数字出栈
                      StringBuffer token = resStack.pop();
                      int n = numStack.pop();
 
