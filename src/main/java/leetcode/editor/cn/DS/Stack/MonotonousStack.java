@@ -18,7 +18,7 @@ public class MonotonousStack {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        //单调递增栈：栈顶元素最小
+        //单调递增栈：栈顶元素最小，保证栈中递减的顺序
         public void MonotonousStack(int[] nums){
             Deque<Integer> stack = new ArrayDeque<>();
 
