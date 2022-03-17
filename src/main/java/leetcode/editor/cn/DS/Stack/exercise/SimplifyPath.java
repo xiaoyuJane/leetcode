@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.DS.Stack.exercise;
 
 //给你一个字符串 path ，表示指向某一文件或目录的 Unix 风格 绝对路径 （以 '/' 开头），请你将其转化为更加简洁的规范路径。 
 // 在 Unix 风格的文件系统中，一个点（.）表示当前目录本身；

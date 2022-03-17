@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.DS.Stack.exercise;
 
 //给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。 
 // 示例 1：
@@ -31,8 +31,13 @@ public class TrappingRainWater{
     
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+    //暴力解法
+    public int trap(int[] height){
+        return  0;
+    }
 
-    public int trap(int[] height) {
+    //栈解法
+    public int trap1(int[] height) {
         int sum = 0;
         //使用栈来存储条形块的索引下标。
         Deque<Integer> stack = new ArrayDeque<>();
