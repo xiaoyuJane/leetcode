@@ -1,4 +1,4 @@
-package leetcode.editor.cn.DS.List;
+package leetcode.editor.cn.DS.List.array.exercise;
 
 public class findDiagonalOrder {
     public static void main(String[] args) {

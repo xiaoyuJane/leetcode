@@ -1,4 +1,4 @@
-package leetcode.editor.cn.DS.List;
+package leetcode.editor.cn.DS.List.array.exercise;
 
 /**
  * 给定一个二进制数组 nums ， 计算其中最大连续 1 的个数。
