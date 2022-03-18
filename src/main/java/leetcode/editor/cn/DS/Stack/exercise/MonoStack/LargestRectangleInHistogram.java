@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.DS.Stack.exercise.MonoStack;
 
 //给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。 
 //
@@ -34,8 +34,6 @@ package leetcode.editor.cn;
 // 
 // Related Topics 栈 数组 单调栈 
 // 👍 1816 👎 0
-
-import org.springframework.boot.jta.atomikos.AtomikosProperties;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -93,7 +91,7 @@ class Solution {
                     top = stack.pop();
                     res = Math.max(res,nums[top]*(i-top));
                 }
-                //做下特殊的处理
+                //做下特殊的处理,因为这里遍历完了while循环，找到了最左侧比他大的数，将其截断成和它一样长
                 stack.push(top);
                 nums[top] = nums[i];
             }

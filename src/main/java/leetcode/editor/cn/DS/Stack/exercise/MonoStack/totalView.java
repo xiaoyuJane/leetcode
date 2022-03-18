@@ -1,4 +1,4 @@
-package leetcode.editor.cn.DS.Stack.exercise;
+package leetcode.editor.cn.DS.Stack.exercise.MonoStack;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
