@@ -1,4 +1,4 @@
-package leetcode.editor.cn.DS.List.array;
+package leetcode.editor.cn.DS.List.array.exercise;
 
 //给定两个数组，编写一个函数来计算它们的交集。 
 //

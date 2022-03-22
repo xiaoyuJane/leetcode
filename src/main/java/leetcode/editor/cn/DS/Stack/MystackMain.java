@@ -4,9 +4,9 @@ import TestAndTool.tool.MyStack1;
 
 /**
  * 使用自定义的栈库（使用动态数组实现的 ArrayList），学习栈的使用
- * push 入栈
- * top 返回栈顶元素（先要判断栈是否非空）
- * pop 弹出栈顶元素，返回的是true或者false
+ * 1.push 入栈
+ * 2.top 返回栈顶元素（先要判断栈是否非空）
+ * 3.pop 弹出栈顶元素，返回的是true或者false
  * isEmpty方法 判断栈是否非空
  */
 public class MystackMain {
@@ -20,7 +20,7 @@ public class MystackMain {
             if (!stack.isEmpty()){
                 System.out.println(stack.top());
             }
-            System.out.println(stack.pop());
+            System.out.println(stack.pop()); //栈空返回false
         }
 
     }

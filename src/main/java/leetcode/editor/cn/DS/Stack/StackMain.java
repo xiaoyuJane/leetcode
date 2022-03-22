@@ -19,8 +19,8 @@ public class StackMain {
         }
 
         stack.pop();
-        System.out.println("The top element is:" + stack.peek());
-        System.out.println("The size is :" + stack.size());
+        System.out.println("The top element is:" + stack.peek()); //The top element is:8
+        System.out.println("The size is :" + stack.size()); //The size is :3
     }
 
 

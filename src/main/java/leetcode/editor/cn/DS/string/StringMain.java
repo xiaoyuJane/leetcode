@@ -1,6 +1,8 @@
 package leetcode.editor.cn.DS.string;
 
 
+import java.util.Arrays;
+
 /**
  * jav中字符串是不可变的
  * 如果你确实希望你的字符串是可变的，则可以使用 toCharArray 将其转换为字符数组。
@@ -9,6 +11,11 @@ package leetcode.editor.cn.DS.string;
  */
 public class StringMain {
     public static void main(String[] args) {
+
+        String splitStr = "/a/./b/../../c/";
+        String[] parts = splitStr.split("/");
+        System.out.println(Arrays.toString(parts)); //[, a, ., b, .., .., c]
+
         String str = "A4";
         System.out.println(str.substring(1)); //4，一个参数，定义起始位置，默认到末尾
         System.out.println(str.charAt(0)); //A ，返回的是位置0对应的字符

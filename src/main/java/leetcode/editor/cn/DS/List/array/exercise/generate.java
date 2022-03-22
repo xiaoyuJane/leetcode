@@ -1,4 +1,4 @@
-package leetcode.editor.cn.DS.List;
+package leetcode.editor.cn.DS.List.array.exercise;
 
 import java.util.ArrayList;
 import java.util.Arrays;
