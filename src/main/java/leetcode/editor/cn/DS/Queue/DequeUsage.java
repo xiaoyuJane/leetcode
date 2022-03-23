@@ -22,6 +22,18 @@ import java.util.LinkedList;
 public class DequeUsage {
     public static void main(String[] args) {
 
+        Deque<String> deque1 = new LinkedList<String>();
+        deque1.offerFirst("2");    //offerFirst () 从首部添加
+        deque1.offerLast("7");   //offerLast () 从尾部添加
+        System.out.println(deque1); //[2, 7]
+        System.out.println(deque1.peekFirst()); //2
+        System.out.println(deque1.peekLast()); //7
+        deque1.pollFirst();
+        System.out.println(deque1); //[7]
+        deque1.pollLast();
+        System.out.println(deque1); //[]
+
+
         System.out.println("===============queue============");
         //1.as noraml queue
         Deque<Integer> queue = new LinkedList<>();
