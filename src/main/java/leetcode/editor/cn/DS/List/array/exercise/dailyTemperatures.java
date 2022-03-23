@@ -69,9 +69,9 @@ public class dailyTemperatures {
                     if (temperatures[j]>temperatures[i]){
                         res[i] = j-i;
                         break;
-                    }else if (res[j] == 0) break;
+                    }else if (res[j] == 0) break; //剪枝操作，如果后面的res值为0，表明找不到比它大的天数了。到这里就break跳出，无需比较
                     else {
-                        j+=res[j];
+                        j+=res[j]; //i对应的值大于j的情况下，j后面有比j大大数，直接让j跳到j= j+res[j]那里，与比j大的数开始比较
                     }
                 }
             }
