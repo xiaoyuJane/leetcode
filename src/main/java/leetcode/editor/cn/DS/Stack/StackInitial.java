@@ -16,6 +16,7 @@ public class StackInitial {
 
         stack.push(8);
         stack.push(9);
+
         deque.push(8);
         deque.push(9);
 
@@ -23,11 +24,17 @@ public class StackInitial {
         System.out.println(new ArrayList<>(stack)); // [8,9]
         List<Integer> list1 = stack.stream().collect(Collectors.toList());//[8,9]
         System.out.println(list1);
+        System.out.println(stack);
+        stack.pop();
+        System.out.println(stack); //[8]
 
         // 推荐使用Deque定义，deque转成ArrayList或stream时保留了“后进先出”的语义
         System.out.println(new ArrayList<>(deque)); // [9,8]
         List<Integer> list2 = deque.stream().collect(Collectors.toList());//[9,8]
         System.out.println(list2);
+        System.out.println(deque);
+        deque.pop();
+        System.out.println(deque); //[8]
     }
 
 }
