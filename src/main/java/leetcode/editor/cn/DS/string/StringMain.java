@@ -16,6 +16,9 @@ public class StringMain {
         String[] parts = splitStr.split("/");
         System.out.println(Arrays.toString(parts)); //[, a, ., b, .., .., c]
 
+        String out = "(())";
+        System.out.println(out.substring(1,out.length()-1)); // ()
+
         String str = "A4";
         System.out.println(str.substring(1)); //4，一个参数，定义起始位置，默认到末尾
         System.out.println(str.charAt(0)); //A ，返回的是位置0对应的字符

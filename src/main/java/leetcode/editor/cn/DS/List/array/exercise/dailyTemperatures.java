@@ -1,8 +1,6 @@
-package leetcode.editor.cn.DS.Stack.exercise;
+package leetcode.editor.cn.DS.List.array.exercise;
 
-import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.Deque;
 
 /**
  * 每日温度
@@ -35,7 +33,7 @@ public class dailyTemperatures {
     public static void main(String[] args) {
         Solution solution = new dailyTemperatures().new Solution();
         int[] temperatures = new int[]{73,74,75,71,69,72,76,73};
-        int[] res = solution.dailyTemperatures2(temperatures);
+        int[] res = solution.dailyTemperatures3(temperatures);
         System.out.println(Arrays.toString(res));
 
     }
@@ -59,23 +57,7 @@ public class dailyTemperatures {
             return answer;
         }
 
-        //2.使用栈的方法，因为需要判断第一个大于temperatures[i]的下标值，并用maxIndex - i，作为结果返回
-        // answer[i] 是指在第 i 天之后，才会有更高的温度
-        public int[] dailyTemperatures2(int[] temperatures) {
-            int n = temperatures.length;
-            Deque<Integer> stack = new ArrayDeque<>(); //存放下标
-            int[] res = new int[n];
 
-            for (int i = 0; i < n; i++) {
-                while (!stack.isEmpty() && temperatures[i]>temperatures[stack.peek()]){ //遇见了大于的就出来，并计算结果
-                    int index = stack.pop();
-                    res[index] = i-index;
-                }
-                stack.push(i); //温度比较小的就留在栈中，等待匹配
-            }
-            return res;
-
-        }
 
         // 3.从后往前遍历，利用后面已知的信息
         public int[] dailyTemperatures3(int[] temperatures){
