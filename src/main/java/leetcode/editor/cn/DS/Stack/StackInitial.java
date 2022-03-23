@@ -25,6 +25,7 @@ public class StackInitial {
         List<Integer> list1 = stack.stream().collect(Collectors.toList());//[8,9]
         System.out.println(list1);
         System.out.println(stack);
+        System.out.println(stack.peek());
         stack.pop();
         System.out.println(stack); //[8]
 
@@ -33,6 +34,7 @@ public class StackInitial {
         List<Integer> list2 = deque.stream().collect(Collectors.toList());//[9,8]
         System.out.println(list2);
         System.out.println(deque);
+        System.out.println(deque.peek());
         deque.pop();
         System.out.println(deque); //[8]
     }
