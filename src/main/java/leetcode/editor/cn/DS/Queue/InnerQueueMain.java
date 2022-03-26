@@ -1,5 +1,7 @@
 package leetcode.editor.cn.DS.Queue;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -15,7 +17,8 @@ import java.util.Queue;
 public class InnerQueueMain {
     public static void main(String[] args) {
         // 1. Initialize a queue.
-        Queue<Integer> q = new LinkedList();
+        Queue<Integer> q = new LinkedList<>();
+        Queue<Integer> q2 = new ArrayDeque<>();
 
         // 2. Get the first element - return null if queue is empty.
         System.out.println("The first element is: " + q.peek());
