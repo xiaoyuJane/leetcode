@@ -4,6 +4,10 @@ import java.util.*;
 
 public class Testcase2 {
     public static void main(String[] args) {
+
+        System.out.println(1<<3); //8
+
+
 //        int[] pre = new int[]{1,2,3,4,5};
 //        int[] left = Arrays.copyOfRange(pre,0,2);//左闭右开，表示拷贝index 0到index2之间，包含index 0，不包含index2
 //        for (int item:left ){
