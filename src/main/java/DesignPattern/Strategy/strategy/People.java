@@ -20,14 +20,10 @@ public class People {
         swim.play();
     }
 
-
     //说话是每个人都会的，是不变的
     public void  speak(){
         System.out.println("i can speak");
     }
-
-
-
 
     //提供setter方法动态更新
     public void setBall(Ball ball) {
