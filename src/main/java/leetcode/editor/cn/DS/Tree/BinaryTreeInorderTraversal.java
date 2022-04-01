@@ -102,9 +102,13 @@ class Solution {
         return  res;
     }
 
+    //中序
     private void inorder(TreeNode root, List<Integer> res) {
+        //终止条件
         if (root == null) return;
+        //向下归
         inorder(root.left,res);
+        //向上回溯
         res.add(root.val);
         inorder(root.right,res);
 

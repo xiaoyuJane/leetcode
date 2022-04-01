@@ -1,7 +1,7 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.algorithm.backtracking;
 
 //给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。 
-//
+//https://cloud.tencent.com/developer/article/1745476
 // 解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。 
 //
 // 
@@ -33,32 +33,43 @@ package leetcode.editor.cn;
 // 👍 1543 👎 0
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Subsets{
     public static void main(String[] args) {
         Solution solution = new Subsets().new Solution();
+        int[] nums = {1,2,3};
+        System.out.println(Arrays.toString(solution.subsets(nums).toArray()));
     }
     
 //leetcode submit region begin(Prohibit modification and deletion)
+
+//收集树形结构中树的所有节点的结果
 class Solution {
     List<Integer> t = new ArrayList<>(); //存放已被选出的数字
     List<List<Integer>> res = new ArrayList<List<Integer>>();
 
     public List<List<Integer>> subsets(int[] nums) {
-        dfs(0,nums);
+        backtracking(0,nums);
         return res;
     }
 
-    private void dfs(int i, int[] nums) {
+    private void backtracking(int i, int[] nums) {
+        //终止条件
         if (i == nums.length){
-            res.add(new ArrayList<Integer>(t));
-            return;
+            res.add(new ArrayList<Integer>(t)); //存放结果
+            return; //返回
         }
+
+        //向下归
+        //1.添加它
         t.add(nums[i]);
-        dfs(i+1,nums);
+        backtracking(i+1,nums);
+
+        //2.不添加它
         t.remove(t.size()-1);
-        dfs(i+1,nums);
+        backtracking(i+1,nums);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
