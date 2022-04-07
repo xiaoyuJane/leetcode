@@ -1,6 +1,7 @@
 package basic.operators;
 
-//https://cloud.tencent.com/developer/article/1338265
+//https://cloud.tencent.com/developer/article/1338265  Java运算符
+//https://cloud.tencent.com/developer/article/1336599  图解 Java 位运算
 public class operatorTest {
     public static void main(String[] args) {
         operatorTest.BitAnd();
