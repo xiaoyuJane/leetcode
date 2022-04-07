@@ -77,10 +77,10 @@ public class operatorTest {
     private static void lshift(){
         int x = 3;
         int y = 5;
-        System.out.println("3:"+Integer.toBinaryString(x));
-        System.out.println("5:"+Integer.toBinaryString(y));
-        System.out.println("5 << 3 = "+ Integer.toBinaryString(y<<x)); //  5*2^3=40
-        System.out.println(y<<x);
+        System.out.println("3:"+Integer.toBinaryString(x)); //3:11
+        System.out.println("5:"+Integer.toBinaryString(y)); //5:101
+        System.out.println("5 << 3 = "+ Integer.toBinaryString(y<<x)); //  5 << 3 = 101000 ,右边补0，
+        System.out.println(y<<x); //  5*2^3=40
     }
 
     /*右移 5 << 3：5的二进制位往右挪:3位，
@@ -90,9 +90,9 @@ public class operatorTest {
         int x = 3;
         int y = 5;
         System.out.println("3:"+Integer.toBinaryString(x));
-        System.out.println("5:"+Integer.toBinaryString(y));
-        System.out.println("5 >> 3 = "+ Integer.toBinaryString(y>>x)); //  5/8=0
-        System.out.println(y>>x);
+        System.out.println("5:"+Integer.toBinaryString(y)); //5:101
+        System.out.println("5 >> 3 = "+ Integer.toBinaryString(y>>x)); // 5 >> 3 = 0
+        System.out.println(y>>x);  //5/8=0
     }
 
    /* 取反就是1为0,0为1,
