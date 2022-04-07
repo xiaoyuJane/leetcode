@@ -14,7 +14,7 @@ public class ListTest {
         //拷贝一个list
         List<Integer> list1 = new LinkedList<>(list);
         System.out.println(list1); //[1, 2, 3]
-        
+
 
         list.remove(list.size()-1);
         System.out.println(list);  //[1, 2]
