@@ -6,6 +6,10 @@ public class Testcase2 {
     public static void main(String[] args) {
 
         System.out.println(1<<3); //8
+        boolean[] b = new boolean[2];
+        System.out.println(b[0]);  //false，默认为false
+
+        System.out.println(3/2);
 
 
 //        int[] pre = new int[]{1,2,3,4,5};

@@ -7,6 +7,15 @@ public class StringBufferTest {
         sb.append("hello ").append("world ").append("java");
         System.out.println(sb); //hello world java
 
+        sb.insert(5,',');
+        System.out.println(sb); //hello,world java
+
+        sb.deleteCharAt(5);
+        System.out.println(sb);
+
+        sb.setCharAt(6,',');
+        System.out.println(sb); //hello,,world java
+
         //删除指定位置的字符
         sb.deleteCharAt(1);
         System.out.println(sb); //hllo world java

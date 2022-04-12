@@ -58,22 +58,23 @@ class Solution {
         return res;
     }
 
-    private void backtracking(String s, int index){
+    private void backtracking(String s, int startIndex){
         //边界条件
-        if (index >= s.length()){
+        if (startIndex >= s.length()){
             res.add(new ArrayList<>(path));
             return;
         }
 
-        //单层搜索逻辑
-        for (int i = index; i < s.length(); i++) {
-            if (isPalindrome(s,index,i)){
-                String str = s.substring(index,i+1);
+        //单层搜索逻辑，for循环用来横向遍历
+        for (int i = startIndex; i < s.length(); i++) {
+
+            if (isPalindrome(s,startIndex,i)){
+                String str = s.substring(startIndex,i+1);
                 path.add(str);
             }else {
                 continue;
             }
-
+            //递归用来纵向遍历
             backtracking(s,i+1);
             path.remove(path.size()-1);
         }

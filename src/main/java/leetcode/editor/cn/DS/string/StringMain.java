@@ -18,6 +18,12 @@ public class StringMain {
 
         String out = "(())";
         System.out.println(out.substring(1,out.length()-1)); // ()
+        String o = out.substring(0,0);
+        System.out.println(o.isEmpty()); //true
+        System.out.println("11:"+ o); //空
+        String ss = out.substring(1,3).concat(".");
+        System.out.println("22:"+ ss); //
+        System.out.println(out);
 
         String str = "A4";
         System.out.println(str.substring(1)); //4，一个参数，定义起始位置，默认到末尾
