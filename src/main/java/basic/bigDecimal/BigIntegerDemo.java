@@ -76,4 +76,26 @@ public class BigIntegerDemo {
     BigInteger compareMin = bigNum1.min(bigNum2);	//27
 
   }
+
+  @Test
+  public void test(){
+    BigInteger bigNum = new BigInteger("52");
+    int radix = 2;
+
+    //1.转换为bigNum的二进制补码形式
+    byte[] num1 = bigNum.toByteArray();
+    //2.转换为bigNum的十进制字符串形式
+    String num2 = bigNum.toString();		//52
+    //3.转换为bigNum的radix进制字符串形式
+    String num3 = bigNum.toString(radix);	//110100
+    //4.将bigNum转换为int
+    int num4 = bigNum.intValue();
+    //5.将bigNum转换为long
+    long num5 = bigNum.longValue();
+    //6.将bigNum转换为float
+    float num6 = bigNum.floatValue();
+    //7.将bigNum转换为double
+    double num7 = bigNum.doubleValue();
+
+  }
 }
