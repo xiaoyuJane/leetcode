@@ -1,6 +1,7 @@
 package leetcode.editor.cn.DS.Stack;
 
-import TestAndTool.tool.MyStack1;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 使用自定义的栈库（使用动态数组实现的 ArrayList），学习栈的使用
@@ -26,3 +27,41 @@ public class MystackMain {
     }
 
 }
+
+class MyStack1 {
+
+    //栈的实现比队列容易。动态数组足以实现堆栈结构
+    public List<Integer> data;               // store elements
+
+    public MyStack1() {
+        data = new ArrayList<>();
+    }
+
+    /** 添加元素. */
+    public void push(int x) {
+        data.add(x);
+    }
+
+    /** 判空 */
+    public boolean isEmpty() {
+        return data.isEmpty();
+    }
+
+    /** 栈顶在数组的最后一个元素位置 */
+    public int top() {
+        return data.get(data.size() - 1);
+    }
+
+    /** 弹出栈中的元素
+     * 如果栈为空，返回为false
+     * 否则弹出元素，返回为true
+     * */
+    public boolean pop() {
+        if (isEmpty()) {
+            return false;
+        }
+        data.remove(data.size() - 1);
+        return true;
+    }
+};
+
