@@ -24,7 +24,7 @@ public class OptionalDemo {
     }
 
     @Test
-    //of：明确user对象不为null
+    //of：user对象不可为null
     public void test2(){
         User user = null;
         Optional<User> opt = Optional.of(user);//user为null时会报NullPointerException
