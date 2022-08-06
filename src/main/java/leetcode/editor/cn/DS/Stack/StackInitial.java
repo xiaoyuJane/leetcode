@@ -3,14 +3,20 @@ package leetcode.editor.cn.DS.Stack;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * 官方定义的栈使用
+ * 两种定义stack的方法，一种是使用系统自带的Stack，具有线程安全性；
+ * 另一种是使用Deque（双端队列），是官方较为推荐的，其有ArrayDeque和LinkedList这两种实现类
+ *      Deque实现类是LinkedList、ArrayDeque、LinkedBlockingDeque
+ */
 public class StackInitial {
     public static void main(String[] args) {
-        //两种定义stack的方法，一种是使用系统自带的Stack，具有线程安全性；
-        // 另一种是使用Deque，是官方较为推荐的，其有ArrayDeque和LinkedList这两种实现类
+
         Stack<Integer> stack0 = new Stack<>();
         Deque<Integer> stack1 = new ArrayDeque<>();
         Deque<Integer> stack2 = new LinkedList<>();
 
+        //不同实现的区别
         Stack<Integer> stack = new Stack<>();
         Deque<Integer> deque = new ArrayDeque<>();  //推荐写法
 
@@ -23,6 +29,7 @@ public class StackInitial {
         //stack的打印和转换成list的方法
         System.out.println(new ArrayList<>(stack)); // [8,9]
         List<Integer> list1 = stack.stream().collect(Collectors.toList());//[8,9]
+
         System.out.println(list1);
         System.out.println(stack);
         System.out.println(stack.peek());

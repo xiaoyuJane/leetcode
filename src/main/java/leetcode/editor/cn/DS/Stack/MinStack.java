@@ -33,7 +33,7 @@ import java.util.Stack;
 
         public int getMin() {
             if (stack.isEmpty()) throw new IllegalStateException("栈为空！");
-            return stack.peek().min; //栈顶的min值
+            return stack.peek().min; //栈顶的min值,初始时为栈顶元素，后续push的时候会使用Math.min函数求取入栈元素和栈顶元素之间的最小值，存放到min中
         }
 
 
