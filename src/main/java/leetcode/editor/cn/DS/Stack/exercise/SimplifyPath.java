@@ -70,7 +70,7 @@ class Solution {
         Deque<String> stack = new ArrayDeque<>();
 
         for (String pathName : paths){
-            if ("..".equals(pathName)){
+            if ("src/test".equals(pathName)){
                 if (!stack.isEmpty()) stack.pop();
             } else if (!pathName.equals("") && !".".equals(pathName)) stack.push(pathName);
         }
