@@ -1,4 +1,4 @@
-package competion;
+package competion.c3021;
 /*
 给你一个下标从 0 开始的整数数组 nums 。在一步操作中，你可以执行以下步骤：
 
@@ -41,13 +41,8 @@ nums[0] 和 nums[1] 形成一个数对，并从 nums 中移除，nums = [2] 。
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class numberOfPairs {
+public class numberOfPairs2 {
     public static void main(String[] args) {
-        Solution solution = new numberOfPairs().new Solution();
-        int[] nums = {5,12,53,22,7,59,41,54,71,24,91,74,62,47,20,14,73,11,82,2,15,38,38,20,57,70,86,93,38,75,94,19,36,40,28,6,35,86,38,94,4,90,18,87,24,22};
-        System.out.println(Arrays.toString(solution.numberOfPairs(nums)));
-
-        //5,12,53,22,7,59,41,54,71,24,91,74,62,47,20,14,73,11,82,2,15,38,38,20,57,70,86,93,38,75,94,19,36,40,28,6,35,86,38,94,4,90,18,87,24,22
 
     }
 
