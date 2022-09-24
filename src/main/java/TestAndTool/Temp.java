@@ -2,6 +2,9 @@ package TestAndTool;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Temp {
 
     @Test
@@ -65,6 +68,34 @@ public class Temp {
         
 
 
+
+    }
+
+    @Test
+    //字符串的截取测试
+    public void subStrings(){
+        String s = "abc";
+        System.out.println(s.substring(1)); //从第一位开始截取
+        //bc
+    }
+
+    @Test
+    //比较函数中可以参考外面的比较数组
+    public void conpareTest(){
+        String[] nums = {"102","473","251","814"};
+
+        //1.下标数组
+        Integer index[] = new Integer[nums.length];
+        for (int j = 0; j < nums.length; j++) {
+            index[j] = j;
+        }
+        System.out.println(Arrays.toString(index));
+        //[0, 1, 2, 3]
+
+        //2.通过辅助数组，来实现下标数组的排序
+        Arrays.sort(index, Comparator.comparing(o -> nums[o].substring(1)));
+        System.out.println(Arrays.toString(index));
+        //[0, 3, 2, 1]
 
     }
 
