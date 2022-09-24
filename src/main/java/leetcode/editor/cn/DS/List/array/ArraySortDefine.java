@@ -25,6 +25,7 @@ public class ArraySortDefine {
             //默认从小到大排序
             Arrays.sort(a); //1.sort(T[] a)：对指定T型数组按数字升序排序。
             System.out.println(Arrays.toString(a));
+            //[1, 2, 3, 4, 5, 8]
         }
 
 
@@ -33,13 +34,16 @@ public class ArraySortDefine {
             int[] a={2,5,4,3,1,8};
             Arrays.sort(a,2,5); //2.sort(T[] a,int formIndex, int toIndex)：对指定T型数组的指定范围按数字升序排序
             System.out.println(Arrays.toString(a));
+            //[2, 5, 1, 3, 4, 8]
         }
 
         public void compSort(){
             Integer[] a = {9,8,7,2,3,4,1,0,6,5};
 
 //            Arrays.sort(a,(a1,a2)->a1-a2);  //升序是按照o1.compareTo(o2)来的，即(a1,a2)->a1-a2；
-            Arrays.sort(a,(a1,a2)->a2-a1); //降序就要取反
+//            Arrays.sort(a,(a1,a2)->a2-a1); //降序就要取反
+//            Arrays.sort(a, Integer::compareTo); //升序的另外写法
+            Arrays.sort(a,(o1, o2) -> o1.compareTo(o2));
 
 //            Arrays.sort(a,new Comparator<Integer>(){
 //                @Override
