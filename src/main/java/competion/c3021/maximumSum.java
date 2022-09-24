@@ -95,13 +95,6 @@ public class maximumSum {
 
         }
 
-
-        public int getMaxSum(int[] nums){
-            if (nums.length<2) return -1;
-            Arrays.sort(nums);
-            System.out.println(nums);
-            return nums[nums.length-1]+nums[nums.length-2];
-        }
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 }
