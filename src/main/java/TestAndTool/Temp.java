@@ -1,40 +1,22 @@
 package TestAndTool;
 
+import org.junit.Test;
+
 public class Temp {
-    public static void main(String[] args) {
-        Solution solution = new Temp().new Solution();
-        String start ="_L__R__R_";
-        String target ="L______RR";
-        System.out.println(solution.canChange(start, target));
 
-    }
-
-    //leetcode submit region begin(Prohibit modification and deletion)
-    class Solution {
-        public boolean canChange(String start, String target) {
-            if(start.equals(target)) return true;
-            boolean res = false;
-            int n = start.length();
-            for(int i=0;i<n-1;i++){
-                StringBuilder sb = new StringBuilder(start);
-                if(sb.charAt(i) == '_' && start.charAt(i+1) == 'L') {
-                    sb.replace(i,i+2,"L_");
-                    if (canChange(sb.toString(),target)){
-                        res = true;
-                        break;
-                    }
-                }
-                if(sb.charAt(i) == 'R' && start.charAt(i+1) == '_'){
-                    sb.replace(i,i+2,"_R");
-                    if (canChange(sb.toString(),target)){
-                        res = true;
-                        break;
-                    }
-                }
-            }
-            return res;
+    @Test
+    //求和的经典操作：
+    // 1. 定义基本sum = 0
+    // 2. 先取低位值相加，即sum = sum + num%10
+    // 3. num右移动，即 num = num/10
+    public void getSum (){
+        int num = 1234;
+        int sum = 0;
+        while (num !=0){
+            sum += num%10;
+            num /=10;
         }
+        System.out.println(sum);
 
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
 }
