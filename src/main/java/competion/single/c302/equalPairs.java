@@ -1,9 +1,4 @@
-package competion.c302;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
+package competion.single.c302;
 
 public class equalPairs {
     public static void main(String[] args) {

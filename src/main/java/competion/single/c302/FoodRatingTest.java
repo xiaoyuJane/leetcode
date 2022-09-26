@@ -1,4 +1,4 @@
-package competion.c302;
+package competion.single.c302;
 
 import java.util.Arrays;
 import java.util.HashMap;

@@ -1,6 +1,4 @@
-package competion.c304;
-
-import java.util.Arrays;
+package competion.single.c304;
 
 public class maximumGroups {
     public static void main(String[] args) {

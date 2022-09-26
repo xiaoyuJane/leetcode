@@ -1,4 +1,4 @@
-package competion.c304;
+package competion.single.c304;
 
 import java.util.Arrays;
 
