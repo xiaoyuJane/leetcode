@@ -74,8 +74,8 @@ public class Temp {
     @Test
     //字符串的截取测试
     public void subStrings(){
-        String s = "abc";
-        System.out.println(s.substring(1)); //从第一位开始截取
+        String s = "abcd";
+        System.out.println(s.substring(3)); //从第一位开始截取
         //bc
     }
 
