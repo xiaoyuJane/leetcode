@@ -100,4 +100,15 @@ public class Temp {
     }
 
 
+    @Test
+    // 空数组的定义
+    public void intTest(){
+        int[] ints = new int[0]; //指定元素个数为0，表示空数组
+        int[] ints1 = new int[]{1, 2};
+
+        System.out.println(Arrays.toString(ints)); //[]
+        System.out.println(Arrays.toString(ints1)); //[1, 2]
+    }
+
+
 }
