@@ -54,35 +54,51 @@ import java.util.List;
 public class smallestTrimmedNumbers {
     public static void main(String[] args) {
         Solution solution = new smallestTrimmedNumbers().new Solution();
+        String[] nums={"102","473","251","814"};
+        int[][] queries={{1,1},{2,3},{4,2},{1,2}};
+        System.out.println(Arrays.toString(solution.smallestTrimmedNumbers(nums,queries)));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        //todo 使用基数排序,也不要使用暴力方法，观察case可知，截取的会有重复的
-        public int[] smallestTrimmedNumbers(String[] nums, int[][] queries) {
 
+        public int[] smallestTrimmedNumbers(String[] nums, int[][] queries) {
             int[] res = new int[queries.length];
+
+            List<List<Integer>> list= new ArrayList<>();
+            int bits = nums[0].length(); //位数
+
+            for (int i = 0; i < bits; i++) {
+                List[] bucket = new List[10];
+                for (int j = 0; j < 10; j++) bucket[j] = new ArrayList<Integer>();
+                List<Integer> tmp = new ArrayList<Integer>();
+
+                for (int j = 0; j < nums.length; j++) {
+                    int idx;
+                    //初始情况，按照j的顺序来定义初始顺序
+                    if (i == 0 ) idx = j;
+                    //从十位开始，基于个位的基本有序来比较
+                    else idx = list.get(i-1).get(j);
+
+                    String s = nums[idx];
+                    //1. 将数值转换为下标，将下标存入数值，通过对bucket下标的遍历，就能得到大小的ijiao
+                    bucket[s.charAt(bits-i-1) -'0'].add(idx);
+                }
+
+                //2.遍历bucket，得到从小到的数值的index
+                for (int j = 0; j < 10; j++) {
+                    tmp.addAll(bucket[j]);
+                }
+                //tmp：有序的index
+                list.add(tmp); //list下标为位数，0为个位
+            }
+
+            for (int i = 0; i < queries.length; i++) {
+                res[i] = list.get(queries[i][1]-1).get(queries[i][0]-1);
+            }
 
             return res;
 
-            /** cpp代码
-             *  int n = nums.size(), m = nums[0].size();
-             *         // vecs[i][j] 表示基数排序第 i 轮中第 j 小的数对应的下标
-             *         vector<vector<int>> vecs(m + 1);
-             *         for (int i = 0; i < n; i++) vecs[0].push_back(i);
-             *         for (int i = 1; i <= m; i++) {
-             *             vector<vector<int>> B(10);
-             *             // 把第 i - 1 轮的结果，根据 nums 中右数第 i 位数，依次放入桶中
-             *             for (int x : vecs[i - 1]) B[nums[x][m - i] - '0'].push_back(x);
-             *             // 把每个桶的结果连接起来，成为第 i 轮的结果
-             *             for (int j = 0; j < 10; j++) for (int x : B[j]) vecs[i].push_back(x);
-             *         }
-             *
-             *         vector<int> ans;
-             *         for (auto &q : queries) ans.push_back(vecs[q[1]][q[0] - 1]);
-             *         return ans;
-             *
-             */
 
         }
 
