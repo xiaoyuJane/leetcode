@@ -2,8 +2,7 @@ package TestAndTool;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.*;
 
 public class Temp {
 
@@ -74,8 +73,8 @@ public class Temp {
     @Test
     //字符串的截取测试
     public void subStrings(){
-        String s = "abcd";
-        System.out.println(s.substring(3)); //从第一位开始截取
+        String s = "12342";
+        System.out.println(s.substring(s.length()-2)); //从第一位开始截取
         //bc
     }
 
@@ -110,5 +109,93 @@ public class Temp {
         System.out.println(Arrays.toString(ints1)); //[1, 2]
     }
 
+
+    @Test
+    //多重List定义
+    public void ListTest(){
+        List<List<Integer>> res = new ArrayList<>();
+        System.out.println(res); // []
+        //添加第一个元素
+        res.add(new ArrayList<>());
+        res.get(0).add(100);
+
+        //添加第二个元素
+        res.add(new ArrayList<>());
+        res.get(1).add(100);
+        System.out.println(res); //[[100], [100]]
+
+        res.get(1).add(0,200);
+        System.out.println(res); //[[100], [200, 100]]
+
+        //添加第三个元素
+        res.add(Arrays.asList(1,2,3));
+        System.out.println(res); //[[100], [200, 100], [1, 2, 3]]
+
+        System.out.println("====================================");
+        //第二种定义的方式
+        List<List<Integer>>list =new ArrayList<List<Integer>>();
+        System.out.println(list);// []
+        //添加第一个元素
+        list.add(new ArrayList<>());
+        list.get(0).add(100);
+
+        //添加第二个元素
+        list.add(new ArrayList<>());
+        list.get(1).add(100);
+        System.out.println(list); //[[100], [100]]
+
+        list.get(1).add(0,200);
+        System.out.println(list); //[[100], [200, 100]]
+
+        //添加第三个元素
+        list.add(Arrays.asList(1,2,3));
+        System.out.println(list); //[[100], [200, 100], [1, 2, 3]]
+    }
+
+    @Test
+    //for循环的剪枝操作
+    public void forTest(){
+        int min = 1;
+        int[] nums = {2,2,2};
+        int res = -1;
+        for (int i = 0; i<nums.length &&nums[i] <= min  ; i++) {
+            res = 1;
+        }
+        System.out.println(res);
+
+    }
+
+    @Test
+    //顺序数组的去重
+    public void sortDistinct(){
+        int[] nums = {0,0,1,1,1,2,2,3,3,4};
+        int k = 0;
+        for (int i = 0; i < nums.length; i++) { //k=0,i=1  k=0,i=2            k=1,i=3   k=1,i=4  k=1,i=5      k=2,i=6   k=2,i=7       k=3,i=8    k=3,i=9
+            if (nums[k]!=nums[i]){              //0,0      0,1                1,1       1,1      1,2          2,2       2,3           3,3        3,4
+                k+=1;                           //         k=1                                   k=2                    k=3                      k=4
+                nums[k]=nums[i] ;               //         nums[1]=1                             nums[2]=2              nums[3]=3                nums[4]=4
+            }                                   // 0,0,..  0,1,...                               0,1,2                  0,1,2,3                  0,1,2,3,4
+        }
+        System.out.println(Arrays.toString(nums)); //[0, 1, 2, 3, 4, 2, 2, 3, 3, 4]
+        System.out.println(k); //4
+        int[] res = Arrays.copyOf(nums,k+1); //新数组长度为k+1
+        System.out.println(Arrays.toString(res)); //[0, 1, 2, 3, 4]
+
+    }
+
+    @Test
+    public void treeSetTest(){
+        int[] numsDivide = {2,4,1,5};
+        TreeSet<Integer> set = new TreeSet<>();
+        for (int i = 0; i < numsDivide.length; i++) {
+            set.add(numsDivide[i]);
+        }
+        int min = set.first();
+        System.out.println(min);
+
+        int i = 174740464% 16;
+        System.out.println(i);
+
+    }
 
 }
