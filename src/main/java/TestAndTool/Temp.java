@@ -232,5 +232,14 @@ public class Temp {
     }
 
 
+    @Test
+    //Integer.MAX_VALUE == 2^32 -1
+    public void maxInt(){
+        int max = Integer.MAX_VALUE;
+        int n = (int) (Math.pow(2,32)-1);
+        System.out.println(max == n);
+    }
+
+
 
 }
