@@ -2,6 +2,7 @@ package TestAndTool;
 
 import org.junit.Test;
 
+import java.math.BigInteger;
 import java.util.*;
 
 public class Temp {
@@ -197,5 +198,39 @@ public class Temp {
         System.out.println(i);
 
     }
+
+
+    @Test
+    //最大公约数
+    public void gcd(){
+        int val = 0;
+        int num = 6;
+        BigInteger gcd = BigInteger.valueOf(val).gcd(BigInteger.valueOf(num)); //0和其他的数的最大公约数为其他
+        int res = gcd.intValue();  //6
+
+        System.out.println(BigInteger.valueOf(2).gcd(BigInteger.valueOf(3))); //1
+        System.out.println(BigInteger.valueOf(6).gcd(BigInteger.valueOf(3))); //3
+
+        System.out.println(gcd.add(BigInteger.valueOf(3)));  //6+3=9
+
+    }
+
+    @Test
+    //list的拷贝，即使使用item.clear()方法，
+    // 因为是引用，最终的res有两个元素，两个元素都为同样的item
+    public void listCopy(){
+        List<Integer> item = new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
+        item.add(1);
+        res.add(item);
+        item.clear();
+        item.add(1);
+        item.add(2);
+        res.add(item);
+        System.out.println(res);
+
+    }
+
+
 
 }
