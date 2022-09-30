@@ -240,6 +240,37 @@ public class Temp {
         System.out.println(max == n);
     }
 
+    @Test
+    //HashSet并不按照插入的顺序
+    public void setIndex(){
+        //HashSet底层也是HashMap
+        HashSet<Integer> set = new HashSet<>();
+        set.add(5);
+        set.add(2);
+        set.add(4);
+
+        for (Integer integer : set) {
+            System.out.println(integer); //2,4,5
+        }
+
+        System.out.println("---------------");
+        Iterator<Integer> iterator = set.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next()); //2,4,5
+        }
+
+        //LinkedHashSet中的元素可以按照它们插入规则集的顺序提取
+        System.out.println("LinkedHashSet中的元素可以按照它们插入规则集的顺序提取");
+        HashSet<Integer> set1 = new LinkedHashSet<>();
+        set1.add(5);
+        set1.add(2);
+        set1.add(4);
+
+        for (Integer integer : set1) {
+            System.out.println(integer); //5,2,4
+        }
+    }
+
 
 
 }
