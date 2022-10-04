@@ -14,12 +14,12 @@ public class QueueMain {
         MyQueue1 q = new MyQueue1();
         q.enQueue(5);
         q.enQueue(3);
-        if (!q.isEmpty()) System.out.println(q.Front());
+        if (!q.isEmpty()) System.out.println(q.Front()); //5
         q.deQueue();
-        if (!q.isEmpty()) System.out.println(q.Front());
+        if (!q.isEmpty()) System.out.println(q.Front()); //3
         q.deQueue();
         q.enQueue(4);
-        if (!q.isEmpty()) System.out.println(q.Front());
+        if (!q.isEmpty()) System.out.println(q.Front()); //4
 
     }
 }
