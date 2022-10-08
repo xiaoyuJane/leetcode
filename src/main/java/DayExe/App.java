@@ -68,4 +68,11 @@ public class App {
         int i = Integer.parseInt(ss, 2);
         System.out.println(Integer.parseInt(ss,2));//3
     }
+
+    @Test
+    public void  stringtest(){
+        String s = "aacb";
+        boolean ab = s.contains("ab");
+        System.out.println(ab);
+    }
 }
