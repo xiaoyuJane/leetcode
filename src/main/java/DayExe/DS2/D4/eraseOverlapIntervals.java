@@ -39,18 +39,20 @@ public class eraseOverlapIntervals {
             if (intervals.length == 0) {
                 return 0;
             }
-
+            //按尾部排序
             Arrays.sort(intervals, ((o1, o2) -> o1[1]-o2[1]));
 
             int n = intervals.length;
             int right = intervals[0][1];
             int ans = 1;
+            //遍历数组，如果后一个区间的左边界比前一个区间的右边界还大，说明没有交集，更新右边界值
             for (int i = 1; i < n; ++i) {
                 if (intervals[i][0] >= right) {
                     ++ans;
                     right = intervals[i][1];
                 }
             }
+            //最小的移除数量=n-最大的不相交区间数
             return n - ans;
 
         }

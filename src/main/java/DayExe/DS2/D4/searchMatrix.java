@@ -41,6 +41,21 @@ public class searchMatrix {
 
             return false;
         }
+
+        //类比二分查找法，线性时间复杂度
+        public boolean searchMatrix2(int[][] matrix, int target){
+
+            int j = matrix[0].length-1;
+            int i = 0; //从右上角开始遍历
+
+            while (j>=0 && i<=matrix.length-1){
+                if ( target == matrix[i][j]) return true;
+                if (target < matrix[i][j]) j--;
+                else i++;
+            }
+            return false;
+
+        }
     }
 //leetcode submit region begin(Prohibit modification and deletion)
 }
