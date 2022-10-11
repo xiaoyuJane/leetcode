@@ -1,4 +1,4 @@
-package DayExe.D12;
+package DayExe.DS1.D12;
 
 import TestAndTool.tool.TreeNode;
 
