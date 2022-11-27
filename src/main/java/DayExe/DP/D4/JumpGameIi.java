@@ -40,6 +40,8 @@ package DayExe.DP.D4;
 public class JumpGameIi{
     public static void main(String[] args) {
         Solution solution = new JumpGameIi().new Solution();
+        int[] nums = {2,3,0,1,4};
+        System.out.println(solution.jump(nums));
     }
     
 //leetcode submit region begin(Prohibit modification and deletion)
@@ -51,9 +53,9 @@ class Solution {
         //base case
         dp[0]=0;
         //自底向上
-        for (int i = n-1; i >0; i--) {
-            dp[i]=1001;
-            for (int j = 0; j < i-1; j++) {
+        for (int i = 1; i <n; i++) {
+            dp[i]=100001;
+            for (int j = i-1; j >=0; j--) {
                 if (nums[j]>=i-j) dp[i] =Math.min(dp[j]+1,dp[i]);
             }
         }
